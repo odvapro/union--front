@@ -5,7 +5,7 @@ const STORAGE_KEY = 'union-theme';
  */
 export function useTheme()
 {
-	const theme = useState('theme', () => 'dark');
+	const theme = useState('theme', () => 'light');
 
 	function readDomTheme()
 	{

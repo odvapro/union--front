@@ -188,7 +188,8 @@
 		<div class="hero__glow hero__glow--left" aria-hidden="true" />
 		<div class="hero__glow hero__glow--right" aria-hidden="true" />
 
-		<div class="container hero__inner">
+		<div class="container">
+			<div class="hero__inner">
 			<!-- Левая колонка — текст -->
 			<div class="hero__content">
 				<div class="hero__badge">
@@ -256,6 +257,7 @@
 						<div class="hero__orbit-label hero__orbit-label--4">START</div>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 

@@ -13,8 +13,11 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
+			htmlAttrs: {
+				'data-theme': 'light',
+			},
 			meta: [
-				{ name: 'theme-color', content: '#0F1115' },
+				{ name: 'theme-color', content: '#313131' },
 			],
 			link: [
 				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg', sizes: 'any' },
