@@ -12,7 +12,8 @@
 		"applyOverlay": "Submit application",
 		"langRu": "RU",
 		"langEn": "EN",
-		"switchLang": "Language"
+		"switchLang": "Language",
+		"switchTheme": "Color theme: light or dark"
 	},
 	"footer": {
 		"tagline1": "An ecosystem for scaling",

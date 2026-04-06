@@ -18,8 +18,8 @@ export default defineEventHandler((event) => {
 				type: 'image/png',
 			},
 		],
-		theme_color: '#0F1115',
-		background_color: '#0F1115',
+		theme_color: '#313131',
+		background_color: '#313131',
 		display: 'standalone',
 	};
 

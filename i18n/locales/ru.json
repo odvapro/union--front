@@ -12,7 +12,8 @@
 		"applyOverlay": "Оставить заявку",
 		"langRu": "RU",
 		"langEn": "EN",
-		"switchLang": "Язык"
+		"switchLang": "Язык",
+		"switchTheme": "Тема оформления: светлая или тёмная"
 	},
 	"footer": {
 		"tagline1": "Экосистема для масштабирования",

@@ -32,7 +32,7 @@
 			<div class="projects__grid">
 				<div class="projects__card gold-border">
 					<div class="projects__card-icon">
-						<IconsIconProjectCorp style="color: #c9a84c" />
+						<IconsIconProjectCorp class="g-icon-accent" />
 					</div>
 
 					<div class="projects__card-label">{{ t('projects.c1Label') }}</div>
@@ -61,7 +61,7 @@
 
 				<div class="projects__card gold-border">
 					<div class="projects__card-icon">
-						<IconsIconProjectHeritage style="color: #c9a84c" />
+						<IconsIconProjectHeritage class="g-icon-accent" />
 					</div>
 
 					<div class="projects__card-label">{{ t('projects.c2Label') }}</div>
@@ -110,7 +110,7 @@
 	background: $darkCard;
 	@include transition();
 
-	&:hover { border-color: rgba(201,168,76,0.5); }
+	&:hover { border-color: rgba(var(--rgb-accent), 0.5); }
 }
 
 .projects__card-icon { margin-bottom: 24px; }

@@ -101,12 +101,12 @@
 
 	&--active
 	{
-		background: rgba(201,168,76,0.1);
+		background: rgba(var(--rgb-accent), 0.1);
 		border-color: $gold;
 		color: $gold;
 	}
 
-	&:hover:not(&--active) { border-color: rgba(201,168,76,0.3); color: $textPrimary; }
+	&:hover:not(&--active) { border-color: rgba(var(--rgb-accent), 0.3); color: $textPrimary; }
 }
 
 .catalog__courses
@@ -126,7 +126,7 @@
 	background: $darkCard;
 	@include transition();
 
-	&:hover { border-color: rgba(201,168,76,0.4); }
+	&:hover { border-color: rgba(var(--rgb-accent), 0.4); }
 }
 
 .catalog__course-num

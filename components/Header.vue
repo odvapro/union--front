@@ -53,6 +53,9 @@
 
 	function closeMenu()
 	{
+		if (!menuOpen.value)
+			return;
+
 		gsap.to('.nav-overlay__link', {
 			x: 24, autoAlpha: 0, duration: 0.2, stagger: 0.04, ease: 'power2.in',
 		});

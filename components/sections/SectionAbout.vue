@@ -33,7 +33,7 @@
 			<div class="about__pillars">
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<IconsIconBusiness style="color: #c9a84c" />
+						<IconsIconBusiness class="g-icon-accent" />
 					</div>
 					<h3 class="about__pillar-title">{{ t('about.p1Title') }}</h3>
 					<p class="about__pillar-text">
@@ -48,7 +48,7 @@
 
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<IconsIconNetwork style="color: #c9a84c" />
+						<IconsIconNetwork class="g-icon-accent" />
 					</div>
 					<h3 class="about__pillar-title">{{ t('about.p2Title') }}</h3>
 					<p class="about__pillar-text">
@@ -63,7 +63,7 @@
 
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<IconsIconEducation style="color: #c9a84c" />
+						<IconsIconEducation class="g-icon-accent" />
 					</div>
 					<h3 class="about__pillar-title">{{ t('about.p3Title') }}</h3>
 					<p class="about__pillar-text">
@@ -108,7 +108,7 @@
 	background: $darkCard;
 	@include transition();
 
-	&:hover { border-color: rgba(201,168,76,0.5); }
+	&:hover { border-color: rgba(var(--rgb-accent), 0.5); }
 }
 
 .about__pillar-icon { margin-bottom: 24px; }
