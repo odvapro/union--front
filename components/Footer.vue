@@ -1,5 +1,6 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
+	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 
 	const navLinks = [
 		{ label: 'О нас', href: '#about' },
@@ -77,17 +78,17 @@
 				<div class="site-footer__col">
 					<p class="site-footer__col-title">Контакты</p>
 					<div class="site-footer__contacts">
-						<a class="site-footer__contact-item" href="tel:+74950000000">
+						<a class="site-footer__contact-item" :href="contactPhoneHref">
 							<span class="site-footer__contact-icon">
 								<IconsIconPhone :size="14" style="color: #c9a84c" />
 							</span>
-							+7 (495) 000-00-00
+							{{ contactPhone }}
 						</a>
-						<a class="site-footer__contact-item" href="https://unionconsulting.ru" target="_blank">
+						<a class="site-footer__contact-item" :href="siteUrl" target="_blank">
 							<span class="site-footer__contact-icon">
 								<IconsIconGlobe :size="14" style="color: #c9a84c" />
 							</span>
-							unionconsulting.ru
+							{{ siteHost }}
 						</a>
 					</div>
 

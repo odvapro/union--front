@@ -3,8 +3,7 @@
 
 	const menuOpen = ref(false);
 	const scrolled = ref(false);
-	const overlayRef = ref(null);
-	const menuLinksRef = ref(null);
+	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 
 	const navLinks = [
 		{ label: 'О нас', href: '#about', num: '01' },
@@ -166,9 +165,9 @@
 						Оставить заявку
 					</a>
 					<div class="nav-overlay__contacts">
-						<a href="tel:+74950000000" class="nav-overlay__contact">+7 (495) 000-00-00</a>
+						<a :href="contactPhoneHref" class="nav-overlay__contact">{{ contactPhone }}</a>
 						<span class="nav-overlay__contact-sep">·</span>
-						<a href="https://unionconsulting.ru" class="nav-overlay__contact" target="_blank">unionconsulting.ru</a>
+						<a :href="siteUrl" class="nav-overlay__contact" target="_blank">{{ siteHost }}</a>
 					</div>
 				</div>
 			</div>

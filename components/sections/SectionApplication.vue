@@ -1,6 +1,7 @@
 <script setup>
 	import { vMaska } from 'maska/vue';
 	import { gsap } from '~/composables/useGsap';
+	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 
 	onMounted(() =>
 	{
@@ -59,13 +60,13 @@
 					</p>
 
 					<div class="application__contacts">
-						<a class="application__contact" href="tel:+74950000000">
+						<a class="application__contact" :href="contactPhoneHref">
 							<IconsIconPhone style="color: #c9a84c" />
-							+7 (495) 000-00-00
+							{{ contactPhone }}
 						</a>
-						<a class="application__contact" href="https://unionconsulting.ru" target="_blank">
+						<a class="application__contact" :href="siteUrl" target="_blank">
 							<IconsIconGlobe style="color: #c9a84c" />
-							unionconsulting.ru
+							{{ siteHost }}
 						</a>
 					</div>
 				</div>

@@ -59,7 +59,7 @@
 </script>
 
 <template>
-	<section class="section funnel">
+	<section id="funnel" class="section funnel">
 		<div class="container">
 			<div class="funnel__header">
 				<h2 class="section__title">

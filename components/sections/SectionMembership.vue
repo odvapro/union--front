@@ -157,7 +157,7 @@
 </script>
 
 <template>
-	<section class="section membership">
+	<section id="membership" class="section membership">
 		<div class="container">
 			<div class="membership__header">
 				<h2 class="section__title">

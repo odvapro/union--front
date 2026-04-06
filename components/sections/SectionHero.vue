@@ -169,7 +169,7 @@
 </script>
 
 <template>
-	<section class="hero" ref="heroRef">
+	<section id="hero" class="hero" ref="heroRef">
 		<canvas ref="canvasRef" class="hero__canvas" aria-hidden="true" />
 
 		<div class="hero__glow hero__glow--left" aria-hidden="true" />

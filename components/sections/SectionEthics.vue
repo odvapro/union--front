@@ -43,7 +43,7 @@
 </script>
 
 <template>
-	<section class="section ethics">
+	<section id="ethics" class="section ethics">
 		<div class="container">
 			<div class="ethics__header">
 				<p class="ethics__label">Кодекс этики UNION</p>

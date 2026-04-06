@@ -21,7 +21,7 @@
 </script>
 
 <template>
-	<section class="section security">
+	<section id="security" class="section security">
 		<div class="container">
 			<div class="security__inner">
 				<div class="security__text">
