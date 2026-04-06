@@ -10,6 +10,7 @@ const DEFAULT_CONTACT_PHONE_HREF = '+74950000000';
  *   siteUrl: string,
  *   siteHost: string,
  *   siteName: string,
+ *   siteShortName: string,
  *   contactPhone: string,
  *   contactPhoneHref: string,
  *   contactPhoneSchema: string
@@ -22,6 +23,7 @@ export function usePublicSite()
 	const siteUrl = (typeof rawUrl === 'string' && rawUrl.trim() ? rawUrl : DEFAULT_SITE_URL).replace(/\/+$/, '');
 	const siteHost = siteUrl.replace(/^https?:\/\//, '');
 	const siteName = runtimeConfig.public.siteName || DEFAULT_SITE_NAME;
+	const siteShortName = runtimeConfig.public.siteShortName || 'Union';
 	const contactPhone = runtimeConfig.public.contactPhone || DEFAULT_CONTACT_PHONE;
 	const contactPhoneTel = runtimeConfig.public.contactPhoneHref || DEFAULT_CONTACT_PHONE_HREF;
 	const contactPhoneHref = `tel:${contactPhoneTel}`;
@@ -31,6 +33,7 @@ export function usePublicSite()
 		siteUrl,
 		siteHost,
 		siteName,
+		siteShortName,
 		contactPhone,
 		contactPhoneHref,
 		contactPhoneSchema,

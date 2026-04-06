@@ -163,6 +163,7 @@
 	<div class="index-page">
 		<SectionsSectionHero />
 		<SectionsSectionAbout />
+		<SectionsSectionAccent />
 		<SectionsSectionEthics />
 		<SectionsSectionLevels />
 		<SectionsSectionMembership />
