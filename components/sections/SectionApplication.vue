@@ -5,12 +5,28 @@
 	const { t } = useI18n();
 	const localePath = useLocalePath();
 
-	const revenueOptions = computed(() => [
-		{ value: 'employee', label: t('application.rev.employee') },
-		{ value: 'under100', label: t('application.rev.under100') },
-		{ value: '100-500', label: t('application.rev.100-500') },
-		{ value: '500plus', label: t('application.rev.500plus') },
+	const levelOptions = computed(() => [
+		{ value: 'guest', label: t('application.level.guest') },
+		{ value: 'start', label: t('application.level.start') },
+		{ value: 'business', label: t('application.level.business') },
+		{ value: 'premier', label: t('application.level.premier') },
+		{ value: 'founder', label: t('application.level.founder') },
 	]);
+
+	const form = reactive({
+		name: '',
+		phone: '',
+		level: '',
+		message: '',
+		agree: false,
+	});
+
+	const isLevelOpen = ref(false);
+	const levelSelectRef = ref(null);
+	const submitted = ref(false);
+	const loading = ref(false);
+	const submitError = ref('');
+	const selectedLevelLabel = computed(() => levelOptions.value.find((opt) => opt.value === form.level)?.label || '');
 
 	onMounted(() =>
 	{
@@ -23,23 +39,48 @@
 			autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out',
 			scrollTrigger: { trigger: '.application__inner', start: 'top 85%', once: true },
 		});
+
+		document.addEventListener('click', onSelectOutsideClick);
+		document.addEventListener('keydown', onEscapeDown);
 	});
 
-	const form = reactive({
-		name: '',
-		phone: '',
-		revenue: '',
-		message: '',
-		agree: false,
+	onBeforeUnmount(() =>
+	{
+		document.removeEventListener('click', onSelectOutsideClick);
+		document.removeEventListener('keydown', onEscapeDown);
 	});
 
-	const submitted = ref(false);
-	const loading = ref(false);
-	const submitError = ref('');
+	function toggleLevelSelect()
+	{
+		isLevelOpen.value = !isLevelOpen.value;
+	}
+
+	function selectLevel(value)
+	{
+		form.level = value;
+		isLevelOpen.value = false;
+	}
+
+	function closeLevelSelect()
+	{
+		isLevelOpen.value = false;
+	}
+
+	function onSelectOutsideClick(event)
+	{
+		if (!levelSelectRef.value || levelSelectRef.value.contains(event.target)) return;
+		closeLevelSelect();
+	}
+
+	function onEscapeDown(event)
+	{
+		if (event.key !== 'Escape') return;
+		closeLevelSelect();
+	}
 
 	async function submitForm()
 	{
-		if (!form.name || !form.phone || !form.revenue || !form.agree) return;
+		if (!form.name || !form.phone || !form.level || !form.agree) return;
 
 		submitError.value = '';
 		loading.value = true;
@@ -50,7 +91,7 @@
 				body: {
 					name: form.name,
 					phone: form.phone,
-					revenue: form.revenue,
+					level: form.level,
 					message: form.message,
 					agree: form.agree,
 				},
@@ -123,17 +164,30 @@
 						</div>
 
 						<div class="application__field">
-							<label class="application__label-field">{{ t('application.fieldRevenue') }}</label>
-							<select v-model="form.revenue" class="application__select">
-								<option value="" disabled>{{ t('application.selectPlaceholder') }}</option>
-								<option
-									v-for="opt in revenueOptions"
-									:key="opt.value"
-									:value="opt.value"
+							<label class="application__label-field">{{ t('application.fieldLevel') }}</label>
+							<div ref="levelSelectRef" class="application__select">
+								<button
+									class="application__select-button"
+									type="button"
+									:class="{ 'application__select-button--placeholder': !selectedLevelLabel }"
+									@click="toggleLevelSelect"
 								>
-									{{ opt.label }}
-								</option>
-							</select>
+									<span>{{ selectedLevelLabel || t('application.selectPlaceholder') }}</span>
+									<span class="application__select-arrow" :class="{ 'application__select-arrow--open': isLevelOpen }" />
+								</button>
+								<div v-if="isLevelOpen" class="application__select-dropdown">
+									<button
+										v-for="opt in levelOptions"
+										:key="opt.value"
+										type="button"
+										class="application__select-option"
+										:class="{ 'application__select-option--active': opt.value === form.level }"
+										@click="selectLevel(opt.value)"
+									>
+										{{ opt.label }}
+									</button>
+								</div>
+							</div>
 						</div>
 
 						<div class="application__field">
@@ -163,7 +217,7 @@
 
 						<button
 							class="application__submit"
-							:disabled="!form.name || !form.phone || !form.revenue || !form.agree || loading"
+							:disabled="!form.name || !form.phone || !form.level || !form.agree || loading"
 							@click="submitForm"
 						>
 							<span v-if="!loading">{{ t('application.submit') }}</span>
@@ -263,7 +317,6 @@
 }
 
 .application__input,
-.application__select,
 .application__textarea
 {
 	padding: 14px 16px;
@@ -276,12 +329,101 @@
 	@include transition();
 	font-family: $firstFont;
 	resize: none;
-	appearance: none;
 
 	&::placeholder { color: var(--color-input-placeholder); }
 	&:focus { border-color: $gold; background: rgba(var(--rgb-accent), 0.04); }
+}
 
-	option { background: $darkCard; color: $textPrimary; }
+.application__select
+{
+	position: relative;
+}
+
+.application__select-button
+{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 16px;
+	background: var(--color-input-bg);
+	border: 1px solid $darkBorder;
+	border-radius: 8px;
+	font-size: 0.9375rem;
+	line-height: 1.3;
+	font-family: $firstFont;
+	color: $textPrimary;
+	cursor: pointer;
+	@include transition();
+
+	&:focus
+	{
+		border-color: $gold;
+		background: rgba(var(--rgb-accent), 0.04);
+	}
+}
+
+.application__select-button--placeholder
+{
+	color: var(--color-input-placeholder);
+}
+
+.application__select-arrow
+{
+	width: 8px;
+	height: 8px;
+	border-right: 1.5px solid currentColor;
+	border-bottom: 1.5px solid currentColor;
+	transform: rotate(45deg) translateY(-2px);
+	flex-shrink: 0;
+	@include transition();
+}
+
+.application__select-arrow--open
+{
+	transform: rotate(-135deg) translateY(2px);
+}
+
+.application__select-dropdown
+{
+	position: absolute;
+	left: 0;
+	top: calc(100% + 8px);
+	z-index: 5;
+	width: 100%;
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	border: 1px solid var(--color-border-strong);
+	border-radius: 8px;
+	background: var(--color-surface-elevated);
+	box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+}
+
+.application__select-option
+{
+	width: 100%;
+	padding: 10px 12px;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	font-size: 0.875rem;
+	line-height: 1.35;
+	font-family: $firstFont;
+	color: $textPrimary;
+	text-align: left;
+	cursor: pointer;
+	@include transition();
+
+	&:hover { background: rgba(var(--rgb-accent), 0.10); }
+}
+
+.application__select-option--active
+{
+	background: rgba(var(--rgb-accent), 0.14);
+	color: rgb(var(--rgb-accent));
 }
 
 .application__checkbox

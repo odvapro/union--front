@@ -2,12 +2,14 @@ export default defineNuxtConfig({
 	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
 	runtimeConfig: {
+		telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || '',
+		telegramChatId: process.env.TELEGRAM_CHAT_ID || '',
 		public: {
 			siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://unionconsulting.ru',
 			siteName: process.env.NUXT_PUBLIC_SITE_NAME || 'Union Consulting Group',
 			siteShortName: process.env.NUXT_PUBLIC_SITE_SHORT_NAME || 'Union',
-			contactPhone: process.env.NUXT_PUBLIC_CONTACT_PHONE || '+7 (495) 000-00-00',
-			contactPhoneHref: process.env.NUXT_PUBLIC_CONTACT_PHONE_HREF || '+74950000000',
+			contactPhone: process.env.NUXT_PUBLIC_CONTACT_PHONE || '+7 928 878-80-28',
+			contactPhoneHref: process.env.NUXT_PUBLIC_CONTACT_PHONE_HREF || '+79288788028',
 			buildTime: process.env.NUXT_PUBLIC_BUILD_TIME || '',
 		},
 	},

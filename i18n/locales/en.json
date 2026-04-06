@@ -143,7 +143,7 @@
 		"subtitle": "Complete the first screening and join the Union Consulting Group ecosystem.",
 		"fieldName": "Your name *",
 		"fieldPhone": "Phone *",
-		"fieldRevenue": "Company revenue *",
+		"fieldLevel": "Which level would you like to join? *",
 		"fieldMessage": "Your request (optional)",
 		"placeholderName": "John Smith",
 		"placeholderPhone": "+7 (___) ___-__-__",
@@ -156,11 +156,12 @@
 		"errorDefault": "Could not submit the application. Try again later or call us.",
 		"successTitle": "Application sent!",
 		"successText": "We will contact you within 24 hours to confirm details.",
-		"rev": {
-			"employee": "Employed",
-			"under100": "Up to 100M ₽ per year",
-			"100-500": "100–500M ₽ per year",
-			"500plus": "500M ₽ per year and above"
+		"level": {
+			"guest": "GUEST — introduction",
+			"start": "START — base level",
+			"business": "BUSINESS — business growth",
+			"premier": "PREMIER — private format",
+			"founder": "FOUNDER — deep transformation"
 		}
 	},
 	"seo": {
@@ -211,7 +212,7 @@
 		"s1Title": "1. Categories of personal data we may collect",
 		"s1": {
 			"i0": "Full name (if provided) and contact details: phone number, email address.",
-			"i1": "Information you provide in application forms and communications with us, including company revenue band, goals, and accompanying messages.",
+			"i1": "Information you provide in application forms and communications with us, including your desired membership tier, goals, and accompanying messages.",
 			"i2": "Technical data: IP address, browser, device and OS information, cookies, and page visit logs — for site operation, security, and analytics.",
 			"i3": "Other information you voluntarily provide when participating in programs, events, or community surveys.",
 			"i4": "Data required to perform contracts and meet admission requirements for the community (including restricted access and NDA workflows where applicable to your case)."

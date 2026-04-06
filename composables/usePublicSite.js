@@ -1,7 +1,7 @@
 const DEFAULT_SITE_URL = 'https://unionconsulting.ru';
 const DEFAULT_SITE_NAME = 'Union Consulting Group';
-const DEFAULT_CONTACT_PHONE = '+7 (495) 000-00-00';
-const DEFAULT_CONTACT_PHONE_HREF = '+74950000000';
+const DEFAULT_CONTACT_PHONE = '+7 928 878-80-28';
+const DEFAULT_CONTACT_PHONE_HREF = '+79288788028';
 
 /**
  * Домен, имя бренда и контакты из runtimeConfig для UI и SEO.
