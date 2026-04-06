@@ -38,12 +38,7 @@
 				<div class="site-footer__brand">
 					<a class="site-footer__logo" href="#" @click.prevent="scrollTo('#about')">
 						<div class="site-footer__logo-mark">
-							<svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-								<path d="M16 2L28 8V18C28 24.6 22.6 30 16 32C9.4 30 4 24.6 4 18V8L16 2Z"
-									fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="1.2"/>
-								<path d="M16 8L22 11V17C22 20.3 19.3 23 16 24C12.7 23 10 20.3 10 17V11L16 8Z"
-									fill="rgba(201,168,76,0.15)" stroke="#c9a84c" stroke-width="1"/>
-							</svg>
+							<IconsIconLogoMark :width="36" :height="36" />
 						</div>
 						<div class="site-footer__logo-text">
 							<span class="site-footer__logo-name">UNION</span>
@@ -84,20 +79,13 @@
 					<div class="site-footer__contacts">
 						<a class="site-footer__contact-item" href="tel:+74950000000">
 							<span class="site-footer__contact-icon">
-								<svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-									<path d="M4 3H7L8.5 7L7 8.5C7.8 10.2 9.8 12.2 11.5 13L13 11.5L17 13V16C17 17.1 16.1 18 15 18C8.4 18 2 11.6 2 5C2 3.9 2.9 3 4 3Z"
-										stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-								</svg>
+								<IconsIconPhone :size="14" style="color: #c9a84c" />
 							</span>
 							+7 (495) 000-00-00
 						</a>
 						<a class="site-footer__contact-item" href="https://unionconsulting.ru" target="_blank">
 							<span class="site-footer__contact-icon">
-								<svg width="14" height="14" viewBox="0 0 20 20" fill="none">
-									<circle cx="10" cy="10" r="8" stroke="#c9a84c" stroke-width="1.5"/>
-									<path d="M2 10H18M10 2C8 5 7 7.5 7 10s1 5 3 8M10 2c2 3 3 5.5 3 8s-1 5-3 8"
-										stroke="#c9a84c" stroke-width="1.5"/>
-								</svg>
+								<IconsIconGlobe :size="14" style="color: #c9a84c" />
 							</span>
 							unionconsulting.ru
 						</a>
@@ -109,9 +97,7 @@
 						@click.prevent="scrollTo('#application')"
 					>
 						Оставить заявку
-						<svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-							<path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-						</svg>
+						<IconsIconArrow :size="14" />
 					</a>
 				</div>
 			</div>

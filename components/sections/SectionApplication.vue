@@ -60,18 +60,11 @@
 
 					<div class="application__contacts">
 						<a class="application__contact" href="tel:+74950000000">
-							<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-								<path d="M4 3H7L8.5 7L7 8.5C7.8 10.2 9.8 12.2 11.5 13L13 11.5L17 13V16C17 17.1 16.1 18 15 18C8.4 18 2 11.6 2 5C2 3.9 2.9 3 4 3Z"
-									stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-							</svg>
+							<IconsIconPhone style="color: #c9a84c" />
 							+7 (495) 000-00-00
 						</a>
 						<a class="application__contact" href="https://unionconsulting.ru" target="_blank">
-							<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-								<circle cx="10" cy="10" r="8" stroke="#c9a84c" stroke-width="1.5"/>
-								<path d="M2 10H18M10 2C8 5 7 7.5 7 10C7 12.5 8 15 10 18M10 2C12 5 13 7.5 13 10C13 12.5 12 15 10 18"
-									stroke="#c9a84c" stroke-width="1.5"/>
-							</svg>
+							<IconsIconGlobe style="color: #c9a84c" />
 							unionconsulting.ru
 						</a>
 					</div>

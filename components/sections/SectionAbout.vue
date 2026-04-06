@@ -31,10 +31,7 @@
 			<div class="about__pillars">
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20 4L36 12V28L20 36L4 28V12L20 4Z" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-							<path d="M20 12L28 16V24L20 28L12 24V16L20 12Z" fill="rgba(201,168,76,0.15)" stroke="#c9a84c" stroke-width="1"/>
-						</svg>
+						<IconsIconBusiness style="color: #c9a84c" />
 					</div>
 					<h3 class="about__pillar-title">Развитие Бизнеса</h3>
 					<p class="about__pillar-text">
@@ -50,13 +47,7 @@
 
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="20" cy="20" r="16" stroke="#c9a84c" stroke-width="1.5"/>
-							<circle cx="20" cy="20" r="8" stroke="#c9a84c" stroke-width="1"/>
-							<circle cx="20" cy="8" r="3" fill="rgba(201,168,76,0.3)" stroke="#c9a84c" stroke-width="1"/>
-							<circle cx="30" cy="26" r="3" fill="rgba(201,168,76,0.3)" stroke="#c9a84c" stroke-width="1"/>
-							<circle cx="10" cy="26" r="3" fill="rgba(201,168,76,0.3)" stroke="#c9a84c" stroke-width="1"/>
-						</svg>
+						<IconsIconNetwork style="color: #c9a84c" />
 					</div>
 					<h3 class="about__pillar-title">Среда и Взаимодействие</h3>
 					<p class="about__pillar-text">
@@ -71,12 +62,7 @@
 
 				<div class="about__pillar gold-border">
 					<div class="about__pillar-icon">
-						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect x="6" y="8" width="28" height="24" rx="2" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-							<line x1="6" y1="16" x2="34" y2="16" stroke="#c9a84c" stroke-width="1"/>
-							<line x1="14" y1="8" x2="14" y2="32" stroke="#c9a84c" stroke-width="1"/>
-							<path d="M19 22L22 25L28 19" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-						</svg>
+						<IconsIconEducation style="color: #c9a84c" />
 					</div>
 					<h3 class="about__pillar-title">Архитектура Знаний</h3>
 					<p class="about__pillar-text">

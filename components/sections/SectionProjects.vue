@@ -30,13 +30,7 @@
 			<div class="projects__grid">
 				<div class="projects__card gold-border">
 					<div class="projects__card-icon">
-						<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect x="6" y="8" width="36" height="32" rx="3" stroke="#c9a84c" stroke-width="1.5"/>
-							<path d="M6 18H42" stroke="#c9a84c" stroke-width="1.5"/>
-							<path d="M18 8V18" stroke="#c9a84c" stroke-width="1.5"/>
-							<circle cx="33" cy="33" r="6" fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="1.5"/>
-							<path d="M30 33L32 35L36 31" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-						</svg>
+						<IconsIconProjectCorp style="color: #c9a84c" />
 					</div>
 
 					<div class="projects__card-label">Для вашего бизнеса</div>
@@ -65,11 +59,7 @@
 
 				<div class="projects__card gold-border">
 					<div class="projects__card-icon">
-						<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M24 6L42 16V32L24 42L6 32V16L24 6Z" stroke="#c9a84c" stroke-width="1.5"/>
-							<path d="M24 14L34 19V29L24 34L14 29V19L24 14Z" fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="1"/>
-							<circle cx="24" cy="24" r="3" fill="#c9a84c"/>
-						</svg>
+						<IconsIconProjectHeritage style="color: #c9a84c" />
 					</div>
 
 					<div class="projects__card-label">Для вашего будущего</div>
