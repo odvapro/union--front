@@ -1,0 +1,42 @@
+[
+	{
+		"num": "01",
+		"title": "Application",
+		"desc": "Submit the form on the website"
+	},
+	{
+		"num": "02",
+		"title": "Intro call",
+		"desc": "Clarifying goals and values"
+	},
+	{
+		"num": "03",
+		"title": "Questionnaire",
+		"desc": "In-depth review of revenue and needs"
+	},
+	{
+		"num": "04",
+		"title": "Security check",
+		"desc": "Reputation and legal review"
+	},
+	{
+		"num": "05",
+		"title": "Board interview",
+		"desc": "Personal defence of your candidacy"
+	},
+	{
+		"num": "06",
+		"title": "Trial participation",
+		"desc": "“Guest” format at one event"
+	},
+	{
+		"num": "07",
+		"title": "Documents",
+		"desc": "Contract, NDA, and Code of Ethics"
+	},
+	{
+		"num": "08",
+		"title": "Onboarding",
+		"desc": "Meet your curator and first networking"
+	}
+]

@@ -1,7 +1,23 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
+	import plansRu from '~/data/membership-plans.ru.json';
+	import plansEn from '~/data/membership-plans.en.json';
 
 	const { contactPhoneHref } = usePublicSite();
+	const { t, locale } = useI18n();
+
+	const plans = computed(() => (locale.value === 'en' ? plansEn : plansRu));
+
+	const FOUNDER_BULLET_COUNT = 3;
+
+	const founderBullets = computed(() =>
+	{
+		const rows = [];
+		for (let i = 0; i < FOUNDER_BULLET_COUNT; i++)
+			rows.push(t(`membership.founderBullets.${i}`));
+
+		return rows;
+	});
 
 	onMounted(() =>
 	{
@@ -26,135 +42,6 @@
 		});
 	});
 
-	const plans = [
-		{
-			name: 'START',
-			tag: 'Фундамент',
-			audience: 'Начинающие предприниматели и те, кто в найме',
-			price: '15 000 ₽ / мес',
-			priceVisit: '5 000 ₽ / визит',
-			color: '#a07840',
-			blocks: [
-				{
-					title: 'Образование',
-					items: [
-						'Льготный доступ к курсам Нетологии',
-						'Акселлератор для начинающих предпринимателей',
-						'Акселлератор для тех, кто в найме',
-						'Скидка 10% на образовательные продукты UNION',
-					],
-				},
-				{
-					title: 'Консалтинг',
-					items: [
-						'Ежегодная персональная диагностика — аудит личности',
-						'1 групповая консультация в месяц от экспертов UNION',
-						'2 групповые консультации в год от резидентов BUSINESS',
-					],
-				},
-				{
-					title: 'Нетворкинг',
-					items: [
-						'Ежемесячный форум со спикерами',
-						'Ежемесячный MasterMind / Codevelopment',
-						'Ежегодный нетворкинг с резидентами BUSINESS',
-						'Общая ежегодная встреча резидентов UNION',
-					],
-				},
-				{
-					title: 'Сопровождение',
-					items: ['Групповой комьюнити менеджер'],
-				},
-			],
-		},
-		{
-			name: 'BUSINESS',
-			tag: 'Масштабирование',
-			audience: 'Предприниматели с оборотом 100–500 млн в год',
-			price: '45 000 ₽ / мес',
-			priceVisit: '10 000 ₽ / визит',
-			note: '+ полный доступ к опциям пакета START',
-			color: '#c9a84c',
-			featured: true,
-			blocks: [
-				{
-					title: 'Образование',
-					items: [
-						'Льготный доступ к курсам Нетологии для резидента и сотрудников',
-						'Ежемесячный доступ 1 сотрудника на акселлератор',
-						'Доступ к ежемесячным оффлайн семинарам (50+ уроков)',
-						'2 доступа к семинарам для сотрудников 1 раз в год',
-						'Скидка 15% на образовательные продукты UNION',
-					],
-				},
-				{
-					title: 'Консалтинг',
-					items: [
-						'Ежегодная диагностика с расшифровкой от эксперта',
-						'1 персональная 2-часовая консультация в месяц',
-						'2 групповые консультации в год от резидентов PREMIER',
-						'Личный Совет Директоров 2 раза в год',
-						'Курс «Управление жизненным циклом» стоимостью 200 тыс. ₽',
-					],
-				},
-				{
-					title: 'Нетворкинг',
-					items: [
-						'Ежемесячный форум и MasterMind с резидентами BUSINESS',
-						'Бизнес-экскурсии к резидентам клуба',
-						'2 ежегодных нетворкинга с резидентами PREMIER',
-						'Организация своего мероприятия на площадке UNION 2 раза в год',
-					],
-				},
-				{
-					title: 'Сопровождение',
-					items: ['Персональный комьюнити менеджер'],
-				},
-			],
-		},
-		{
-			name: 'PREMIER',
-			tag: 'Влияние',
-			audience: 'Предприниматели с оборотом от 500 млн в год',
-			price: 'По рекомендации',
-			note: '+ полный доступ к START и BUSINESS',
-			lock: true,
-			color: '#e8c97a',
-			blocks: [
-				{
-					title: 'Образование',
-					items: [
-						'Неограниченный доступ к оффлайн семинарам',
-						'4 доступа к семинарам для сотрудников 1 раз в год',
-						'Скидка 20% на образовательные продукты UNION',
-					],
-				},
-				{
-					title: 'Консалтинг',
-					items: [
-						'Диагностика + ИПР с экспертом UNION',
-						'2 персональные консультации в месяц + трекинг',
-						'2-дневная стратегическая сессия 1 раз в год',
-						'Личный Совет Директоров 2 раза в год',
-					],
-				},
-				{
-					title: 'Нетворкинг',
-					items: [
-						'Закрытый ужин со спикером ежемесячно',
-						'Бизнес-экскурсии в крупные компании России и мира',
-						'Членство в Совете Union (влияние на повестку)',
-						'Организация мероприятия на площадке UNION 4 раза в год',
-					],
-				},
-				{
-					title: 'Сопровождение',
-					items: ['Персональный комьюнити менеджер'],
-				},
-			],
-		},
-	];
-
 	const activePlan = ref(0);
 </script>
 
@@ -163,10 +50,10 @@
 		<div class="container">
 			<div class="membership__header">
 				<h2 class="section__title">
-					Выберите <span class="gold-text">свой уровень</span>
+					{{ t('membership.titleBefore') }}<span class="gold-text">{{ t('membership.titleGold') }}</span>
 				</h2>
 				<p class="section__subtitle">
-					Каждый следующий уровень включает все преимущества предыдущего
+					{{ t('membership.subtitle') }}
 				</p>
 			</div>
 
@@ -219,22 +106,20 @@
 
 			<div class="membership__founder gold-border">
 				<div class="membership__founder-content">
-					<div class="membership__founder-badge">FOUNDER</div>
-					<h3 class="membership__founder-title">Особый формат участия</h3>
+					<div class="membership__founder-badge">{{ t('membership.founderBadge') }}</div>
+					<h3 class="membership__founder-title">{{ t('membership.founderTitle') }}</h3>
 					<p class="membership__founder-text">
-						Для владельцев бизнеса, готовых к глубокой личной и командной трансформации.
+						{{ t('membership.founderText') }}
 					</p>
 					<ul class="membership__founder-list">
-						<li>2-дневная стратегическая сессия от эксперта</li>
-						<li>Персональное сопровождение: 52 встречи в год (21 онлайн + 21 оффлайн)</li>
-						<li>Участие в закрытых сессиях с основателями UNION 2 раза в год</li>
+						<li v-for="(line, idx) in founderBullets" :key="idx">{{ line }}</li>
 					</ul>
 				</div>
 				<a
 					class="membership__founder-cta"
 					:href="contactPhoneHref"
 				>
-					Обсудить условия
+					{{ t('membership.founderCta') }}
 				</a>
 			</div>
 		</div>

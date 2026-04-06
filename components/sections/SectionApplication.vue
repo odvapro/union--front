@@ -2,6 +2,14 @@
 	import { vMaska } from 'maska/vue';
 	import { gsap } from '~/composables/useGsap';
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
+	const { t } = useI18n();
+
+	const revenueOptions = computed(() => [
+		{ value: 'employee', label: t('application.rev.employee') },
+		{ value: 'under100', label: t('application.rev.under100') },
+		{ value: '100-500', label: t('application.rev.100-500') },
+		{ value: '500plus', label: t('application.rev.500plus') },
+	]);
 
 	onMounted(() =>
 	{
@@ -27,13 +35,6 @@
 	const submitted = ref(false);
 	const loading = ref(false);
 	const submitError = ref('');
-
-	const revenueOptions = [
-		{ value: 'employee', label: 'Я в найме' },
-		{ value: 'under100', label: 'До 100 млн ₽ в год' },
-		{ value: '100-500', label: '100–500 млн ₽ в год' },
-		{ value: '500plus', label: 'От 500 млн ₽ в год' },
-	];
 
 	async function submitForm()
 	{
@@ -63,7 +64,7 @@
 				const d = e.data;
 				msg = String(d.message || d.statusMessage || '');
 			}
-			submitError.value = msg || 'Не удалось отправить заявку. Попробуйте позже или позвоните нам.';
+			submitError.value = msg || t('application.errorDefault');
 		}
 		finally
 		{
@@ -77,12 +78,12 @@
 		<div class="container">
 			<div class="application__inner">
 				<div class="application__text">
-					<p class="application__label">Начните здесь</p>
+					<p class="application__label">{{ t('application.label') }}</p>
 					<h2 class="section__title application__title">
-						Ваш следующий уровень<br>начинается <span class="gold-text">здесь</span>
+						{{ t('application.titleLine1') }}<br>{{ t('application.titleLine2Before') }}<span class="gold-text">{{ t('application.titleGold') }}</span>
 					</h2>
 					<p class="section__subtitle">
-						Пройдите первичный отбор и станьте частью экосистемы Union Consulting Group.
+						{{ t('application.subtitle') }}
 					</p>
 
 					<div class="application__contacts">
@@ -100,30 +101,30 @@
 				<div class="application__form-wrap gold-border">
 					<div v-if="!submitted" class="application__form">
 						<div class="application__field">
-							<label class="application__label-field">Ваше имя *</label>
+							<label class="application__label-field">{{ t('application.fieldName') }}</label>
 							<input
 								v-model="form.name"
 								class="application__input"
 								type="text"
-								placeholder="Иван Иванов"
+								:placeholder="t('application.placeholderName')"
 							>
 						</div>
 
 						<div class="application__field">
-							<label class="application__label-field">Телефон *</label>
+							<label class="application__label-field">{{ t('application.fieldPhone') }}</label>
 							<input
 								v-model="form.phone"
 								v-maska="'+7 (###) ###-##-##'"
 								class="application__input"
 								type="tel"
-								placeholder="+7 (___) ___-__-__"
+								:placeholder="t('application.placeholderPhone')"
 							>
 						</div>
 
 						<div class="application__field">
-							<label class="application__label-field">Оборот компании *</label>
+							<label class="application__label-field">{{ t('application.fieldRevenue') }}</label>
 							<select v-model="form.revenue" class="application__select">
-								<option value="" disabled>Выберите вариант</option>
+								<option value="" disabled>{{ t('application.selectPlaceholder') }}</option>
 								<option
 									v-for="opt in revenueOptions"
 									:key="opt.value"
@@ -135,11 +136,11 @@
 						</div>
 
 						<div class="application__field">
-							<label class="application__label-field">Ваш запрос (необязательно)</label>
+							<label class="application__label-field">{{ t('application.fieldMessage') }}</label>
 							<textarea
 								v-model="form.message"
 								class="application__textarea"
-								placeholder="Опишите, что хотите получить от сообщества..."
+								:placeholder="t('application.placeholderMessage')"
 								rows="3"
 							/>
 						</div>
@@ -148,7 +149,7 @@
 							<input v-model="form.agree" type="checkbox">
 							<span class="application__checkbox-mark" />
 							<span class="application__checkbox-text">
-								Я согласен с обработкой персональных данных
+								{{ t('application.checkbox') }}
 							</span>
 						</label>
 
@@ -159,16 +160,16 @@
 							:disabled="!form.name || !form.phone || !form.revenue || !form.agree || loading"
 							@click="submitForm"
 						>
-							<span v-if="!loading">Отправить заявку</span>
-							<span v-else>Отправляем...</span>
+							<span v-if="!loading">{{ t('application.submit') }}</span>
+							<span v-else>{{ t('application.submitting') }}</span>
 						</button>
 					</div>
 
 					<div v-else class="application__success">
 						<div class="application__success-icon">✓</div>
-						<h3 class="application__success-title">Заявка отправлена!</h3>
+						<h3 class="application__success-title">{{ t('application.successTitle') }}</h3>
 						<p class="application__success-text">
-							Мы свяжемся с вами в течение 24 часов для уточнения деталей.
+							{{ t('application.successText') }}
 						</p>
 					</div>
 				</div>

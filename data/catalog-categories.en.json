@@ -1,0 +1,154 @@
+[
+	{
+		"name": "Strategy and systems",
+		"courses": [
+			{
+				"num": "01",
+				"title": "Strategic planning: from vision to results",
+				"items": [
+					"Mission and key business priorities",
+					"Strategic planning",
+					"Goal map and team accountability",
+					"Management tools to turn strategy into tactics"
+				]
+			},
+			{
+				"num": "02",
+				"title": "Organizational life cycle",
+				"items": [
+					"Company life cycle stages",
+					"Management cycle map",
+					"Cross-functional conflicts and resolution techniques",
+					"Organizational transformation program"
+				]
+			},
+			{
+				"num": "03",
+				"title": "Management cycle",
+				"items": [
+					"Management system without a “boss” role",
+					"Task-setting and delivery skills",
+					"Algorithms for personal and team effectiveness"
+				]
+			},
+			{
+				"num": "08",
+				"title": "Sales reimagined: from contact to value",
+				"items": [
+					"Selling solutions and building long-term relationships",
+					"Customer type diagnostics",
+					"Uncovering hidden needs and handling objections"
+				]
+			},
+			{
+				"num": "09",
+				"title": "Business as a system: stop firefighting",
+				"items": [
+					"Analyzing and improving business processes",
+					"From working in the business to managing it",
+					"Business process blueprint design"
+				]
+			}
+		]
+	},
+	{
+		"name": "Team and culture",
+		"courses": [
+			{
+				"num": "04",
+				"title": "Team engagement and motivation",
+				"items": [
+					"Measuring and raising engagement without pressure",
+					"Diagnosing and fixing team dynamics bottlenecks",
+					"Building a culture of openness and initiative"
+				]
+			},
+			{
+				"num": "05",
+				"title": "Hiring productive employees",
+				"items": [
+					"Identifying performers and effective interviewing",
+					"Tools to retain key people",
+					"Unified hiring rules and team profile"
+				]
+			},
+			{
+				"num": "10",
+				"title": "Management 3.0: leadership without stress",
+				"items": [
+					"Conscious result management without pressure",
+					"Delegation and control tools",
+					"Non-financial motivation"
+				]
+			},
+			{
+				"num": "11",
+				"title": "Stages of team development",
+				"items": [
+					"Diagnosing the team development stage",
+					"Managing team dynamics",
+					"Motivation aligned with goals and values"
+				]
+			},
+			{
+				"num": "12",
+				"title": "Human ecology in business",
+				"items": [
+					"Corporate culture as a competitive advantage",
+					"Physiology and performance",
+					"Talent retention and reducing turnover"
+				]
+			}
+		]
+	},
+	{
+		"name": "Personal effectiveness and tools",
+		"courses": [
+			{
+				"num": "13",
+				"title": "Resourceful state",
+				"items": [
+					"Managing physical, emotional, and mental energy",
+					"Burnout diagnostics and recovery methods",
+					"Quick recovery techniques without stepping away from work"
+				]
+			},
+			{
+				"num": "14",
+				"title": "Leader emotional intelligence",
+				"items": [
+					"Managing emotions to boost team productivity",
+					"Building trust and accountability",
+					"Group dynamics for motivation"
+				]
+			},
+			{
+				"num": "15",
+				"title": "Time management for leaders",
+				"items": [
+					"Planning systems that raise productivity by up to 30%",
+					"Delegation and focus techniques",
+					"Designing your “ideal day”"
+				]
+			},
+			{
+				"num": "16",
+				"title": "Excel for business: data, analytics, efficiency",
+				"items": [
+					"Report automation and advanced spreadsheets",
+					"Data visualization and routine optimization",
+					"Real cases from participants’ businesses"
+				]
+			},
+			{
+				"num": "17",
+				"title": "Presentation skills: structure and clarity",
+				"items": [
+					"Principles of persuasive decks",
+					"Storytelling and visual design",
+					"Preparing and delivering presentations"
+				]
+			}
+		]
+	}
+]

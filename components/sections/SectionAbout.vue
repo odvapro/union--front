@@ -1,6 +1,8 @@
 <script setup>
 	import { gsap, ScrollTrigger } from '~/composables/useGsap';
 
+	const { t } = useI18n();
+
 	onMounted(() =>
 	{
 		gsap.fromTo('.about__header', { autoAlpha: 0, y: 50 }, {
@@ -20,11 +22,11 @@
 		<div class="container">
 			<div class="about__header">
 				<h2 class="section__title">
-					Мы объединяем силу окружения,<br>
-					<span class="gold-text">глубокую экспертизу</span> и образование
+					{{ t('about.titleBefore') }}<br>
+					<span class="gold-text">{{ t('about.titleGold') }}</span> {{ t('about.titleAfter') }}
 				</h2>
 				<p class="section__subtitle about__lead">
-					В единый механизм достижения ваших целей
+					{{ t('about.lead') }}
 				</p>
 			</div>
 
@@ -33,15 +35,14 @@
 					<div class="about__pillar-icon">
 						<IconsIconBusiness style="color: #c9a84c" />
 					</div>
-					<h3 class="about__pillar-title">Развитие Бизнеса</h3>
+					<h3 class="about__pillar-title">{{ t('about.p1Title') }}</h3>
 					<p class="about__pillar-text">
-						Персональный и групповой консалтинг, инструменты развития для бизнеса и личности,
-						Личный Совет Директоров.
+						{{ t('about.p1Text') }}
 					</p>
 					<ul class="about__pillar-list">
-						<li>Персональный консалтинг</li>
-						<li>Групповые сессии</li>
-						<li>Личный Совет Директоров</li>
+						<li>{{ t('about.p1i1') }}</li>
+						<li>{{ t('about.p1i2') }}</li>
+						<li>{{ t('about.p1i3') }}</li>
 					</ul>
 				</div>
 
@@ -49,14 +50,14 @@
 					<div class="about__pillar-icon">
 						<IconsIconNetwork style="color: #c9a84c" />
 					</div>
-					<h3 class="about__pillar-title">Среда и Взаимодействие</h3>
+					<h3 class="about__pillar-title">{{ t('about.p2Title') }}</h3>
 					<p class="about__pillar-text">
-						Нетворкинг, мастермайнды, форумы со спикерами, бизнес-экскурсии в ведущие компании.
+						{{ t('about.p2Text') }}
 					</p>
 					<ul class="about__pillar-list">
-						<li>Ежемесячные форумы</li>
-						<li>MasterMind / Codevelopment</li>
-						<li>Бизнес-экскурсии</li>
+						<li>{{ t('about.p2i1') }}</li>
+						<li>{{ t('about.p2i2') }}</li>
+						<li>{{ t('about.p2i3') }}</li>
 					</ul>
 				</div>
 
@@ -64,15 +65,14 @@
 					<div class="about__pillar-icon">
 						<IconsIconEducation style="color: #c9a84c" />
 					</div>
-					<h3 class="about__pillar-title">Архитектура Знаний</h3>
+					<h3 class="about__pillar-title">{{ t('about.p3Title') }}</h3>
 					<p class="about__pillar-text">
-						Тренинги, семинары, онлайн-курсы, акселлератор развития — более 17 программ
-						от практикующих экспертов.
+						{{ t('about.p3Text') }}
 					</p>
 					<ul class="about__pillar-list">
-						<li>Тренинги и семинары</li>
-						<li>Онлайн-курсы</li>
-						<li>Акселлератор развития</li>
+						<li>{{ t('about.p3i1') }}</li>
+						<li>{{ t('about.p3i2') }}</li>
+						<li>{{ t('about.p3i3') }}</li>
 					</ul>
 				</div>
 			</div>

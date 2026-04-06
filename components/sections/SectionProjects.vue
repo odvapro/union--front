@@ -1,6 +1,8 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 
+	const { t } = useI18n();
+
 	onMounted(() =>
 	{
 		gsap.fromTo('.projects__header', { autoAlpha: 0, y: 40 }, {
@@ -20,10 +22,10 @@
 		<div class="container">
 			<div class="projects__header">
 				<h2 class="section__title">
-					Эксклюзивные <span class="gold-text">проекты</span> сообщества
+					{{ t('projects.titleBefore') }}<span class="gold-text">{{ t('projects.titleGold') }}</span>{{ t('projects.titleAfter') }}
 				</h2>
 				<p class="section__subtitle">
-					Дополнительные возможности для резидентов UNION
+					{{ t('projects.subtitle') }}
 				</p>
 			</div>
 
@@ -33,26 +35,26 @@
 						<IconsIconProjectCorp style="color: #c9a84c" />
 					</div>
 
-					<div class="projects__card-label">Для вашего бизнеса</div>
+					<div class="projects__card-label">{{ t('projects.c1Label') }}</div>
 					<h3 class="projects__card-title">
-						Отдел развития компетенций на аутсорсе
+						{{ t('projects.c1Title') }}
 					</h3>
 					<p class="projects__card-desc">
-						Мы берём на себя функцию корпоративного обучения — от диагностики до внедрения системы оценки сотрудников.
+						{{ t('projects.c1Desc') }}
 					</p>
 
 					<ul class="projects__card-list">
 						<li>
 							<span class="projects__list-icon">→</span>
-							Анализ потребностей и выявление пробелов (карта компетенций)
+							{{ t('projects.c1Li1') }}
 						</li>
 						<li>
 							<span class="projects__list-icon">→</span>
-							Разработка индивидуальных программ обучения
+							{{ t('projects.c1Li2') }}
 						</li>
 						<li>
 							<span class="projects__list-icon">→</span>
-							Внедрение систем оценки и дистанционного обучения (LMS)
+							{{ t('projects.c1Li3') }}
 						</li>
 					</ul>
 				</div>
@@ -62,26 +64,26 @@
 						<IconsIconProjectHeritage style="color: #c9a84c" />
 					</div>
 
-					<div class="projects__card-label">Для вашего будущего</div>
+					<div class="projects__card-label">{{ t('projects.c2Label') }}</div>
 					<h3 class="projects__card-title">
-						Школа юных предпринимателей «Наследие»
+						{{ t('projects.c2Title') }}
 					</h3>
 					<p class="projects__card-desc">
-						Программа для детей и молодёжи резидентов: практическое погружение в мир предпринимательства под руководством наставников.
+						{{ t('projects.c2Desc') }}
 					</p>
 
 					<ul class="projects__card-list">
 						<li>
 							<span class="projects__list-icon">→</span>
-							Обучение основам предпринимательства и финансовой грамотности
+							{{ t('projects.c2Li1') }}
 						</li>
 						<li>
 							<span class="projects__list-icon">→</span>
-							Развитие лидерских навыков у молодёжи
+							{{ t('projects.c2Li2') }}
 						</li>
 						<li>
 							<span class="projects__list-icon">→</span>
-							Практические проекты и стартапы под руководством наставников-резидентов
+							{{ t('projects.c2Li3') }}
 						</li>
 					</ul>
 				</div>

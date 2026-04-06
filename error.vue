@@ -6,6 +6,9 @@
 		},
 	});
 
+	const { t } = useI18n();
+	const localePath = useLocalePath();
+
 	const statusCode = computed(() =>
 	{
 		const n = Number(props.error?.statusCode);
@@ -16,11 +19,11 @@
 	const headline = computed(() =>
 	{
 		if (statusCode.value === 404)
-			return 'Страница не найдена';
+			return t('error.404');
 		if (statusCode.value === 403)
-			return 'Доступ запрещён';
+			return t('error.403');
 
-		return 'Сбой или недоступность';
+		return t('error.default');
 	});
 
 	const detail = computed(() =>
@@ -30,11 +33,11 @@
 		if (m && String(m).trim())
 			return String(m).trim();
 		if (statusCode.value === 404)
-			return 'Запрашиваемый адрес не существует или был перенесён.';
+			return t('error.detail404');
 		if (statusCode.value === 403)
-			return 'У вас нет прав для просмотра этого раздела.';
+			return t('error.detail403');
 
-		return 'Попробуйте вернуться на главную или зайти позже.';
+		return t('error.detailDefault');
 	});
 
 	useHead(() => ({
@@ -44,7 +47,7 @@
 		],
 	}));
 
-	const goHome = () => clearError({ redirect: '/' });
+	const goHome = () => clearError({ redirect: localePath('/') });
 </script>
 
 <template>
@@ -65,7 +68,7 @@
 					</div>
 				</div>
 
-				<p class="error-page__label">Ошибка</p>
+				<p class="error-page__label">{{ t('error.label') }}</p>
 
 				<div class="error-page__code-wrap">
 					<span class="error-page__code">{{ statusCode }}</span>
@@ -76,14 +79,14 @@
 
 				<div class="error-page__actions">
 					<button type="button" class="error-page__btn error-page__btn--primary" @click="goHome">
-						<span>На главную</span>
+						<span>{{ t('error.home') }}</span>
 						<IconsIconArrow :size="16" />
 					</button>
 				</div>
 			</div>
 
 			<p class="error-page__footnote">
-				Если проблема повторяется, напишите нам через форму на главной странице.
+				{{ t('error.footnote') }}
 			</p>
 		</div>
 	</div>

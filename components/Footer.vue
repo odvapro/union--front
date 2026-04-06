@@ -1,14 +1,15 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
+	const { t } = useI18n();
 
-	const navLinks = [
-		{ label: 'О нас', href: '#about' },
-		{ label: 'Уровни', href: '#levels' },
-		{ label: 'Обучение', href: '#catalog' },
-		{ label: 'Проекты', href: '#projects' },
-		{ label: 'Заявка', href: '#application' },
-	];
+	const navLinks = computed(() => [
+		{ label: t('nav.about'), href: '#about' },
+		{ label: t('nav.levels'), href: '#levels' },
+		{ label: t('nav.catalog'), href: '#catalog' },
+		{ label: t('nav.projects'), href: '#projects' },
+		{ label: t('nav.application'), href: '#application' },
+	]);
 
 	function scrollTo(href)
 	{
@@ -48,19 +49,19 @@
 					</a>
 
 					<p class="site-footer__tagline">
-						Экосистема для масштабирования<br>личности и бизнеса.
+						{{ t('footer.tagline1') }}<br>{{ t('footer.tagline2') }}
 					</p>
 
 					<div class="site-footer__badges">
-						<span class="site-footer__badge">NDA</span>
-						<span class="site-footer__badge">Закрытый клуб</span>
-						<span class="site-footer__badge">5 уровней</span>
+						<span class="site-footer__badge">{{ t('footer.badgeNda') }}</span>
+						<span class="site-footer__badge">{{ t('footer.badgeClub') }}</span>
+						<span class="site-footer__badge">{{ t('footer.badgeLevels') }}</span>
 					</div>
 				</div>
 
 				<!-- Nav -->
 				<div class="site-footer__col">
-					<p class="site-footer__col-title">Навигация</p>
+					<p class="site-footer__col-title">{{ t('footer.navTitle') }}</p>
 					<nav class="site-footer__nav">
 						<a
 							v-for="link in navLinks"
@@ -76,7 +77,7 @@
 
 				<!-- Contacts -->
 				<div class="site-footer__col">
-					<p class="site-footer__col-title">Контакты</p>
+					<p class="site-footer__col-title">{{ t('footer.contactsTitle') }}</p>
 					<div class="site-footer__contacts">
 						<a class="site-footer__contact-item" :href="contactPhoneHref">
 							<span class="site-footer__contact-icon">
@@ -97,7 +98,7 @@
 						href="#application"
 						@click.prevent="scrollTo('#application')"
 					>
-						Оставить заявку
+						{{ t('footer.apply') }}
 						<IconsIconArrow :size="14" />
 					</a>
 				</div>
@@ -108,10 +109,10 @@
 		<div class="site-footer__bottom">
 			<div class="container site-footer__bottom-inner">
 				<p class="site-footer__copy">
-					© {{ currentYear }} Union Consulting Group. Все права защищены.
+					{{ t('footer.copy', { year: currentYear }) }}
 				</p>
 				<p class="site-footer__legal">
-					Политика конфиденциальности · NDA при вступлении
+					{{ t('footer.legal') }}
 				</p>
 			</div>
 		</div>

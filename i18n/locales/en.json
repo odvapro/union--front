@@ -1,0 +1,202 @@
+{
+	"nav": {
+		"about": "About",
+		"levels": "Tiers",
+		"catalog": "Learning",
+		"projects": "Projects",
+		"application": "Apply"
+	},
+	"header": {
+		"cta": "Join",
+		"openMenu": "Open menu",
+		"applyOverlay": "Submit application",
+		"langRu": "RU",
+		"langEn": "EN",
+		"switchLang": "Language"
+	},
+	"footer": {
+		"tagline1": "An ecosystem for scaling",
+		"tagline2": "your people and your business.",
+		"badgeNda": "NDA",
+		"badgeClub": "Private club",
+		"badgeLevels": "5 tiers",
+		"navTitle": "Navigation",
+		"contactsTitle": "Contacts",
+		"apply": "Submit application",
+		"copy": "© {year} Union Consulting Group. All rights reserved.",
+		"legal": "Privacy policy · NDA on admission"
+	},
+	"hero": {
+		"badge": "Private business community",
+		"subtitle1": "Consulting and a private community for entrepreneurs.",
+		"subtitle2": "An ecosystem for scaling you and your business.",
+		"ctaPrimary": "Submit application",
+		"ctaSecondary": "Learn more",
+		"statLevels": "membership tiers",
+		"statPrograms": "learning programs",
+		"statNdaLabel": "NDA",
+		"statNdaSub": "confidentiality",
+		"scrollHint": "Scroll down"
+	},
+	"about": {
+		"titleBefore": "We combine the power of your network,",
+		"titleGold": "deep expertise",
+		"titleAfter": "and education",
+		"lead": "Into one engine for reaching your goals",
+		"p1Title": "Business growth",
+		"p1Text": "Personal and group consulting, growth tools for business and people, and a personal Board of Directors.",
+		"p1i1": "Personal consulting",
+		"p1i2": "Group sessions",
+		"p1i3": "Personal Board of Directors",
+		"p2Title": "Environment and interaction",
+		"p2Text": "Networking, masterminds, speaker forums, and business visits to leading companies.",
+		"p2i1": "Monthly forums",
+		"p2i2": "MasterMind / Codevelopment",
+		"p2i3": "Business visits",
+		"p3Title": "Knowledge architecture",
+		"p3Text": "Training, seminars, online courses, and a growth accelerator — 17+ programs from practicing experts.",
+		"p3i1": "Training and seminars",
+		"p3i2": "Online courses",
+		"p3i3": "Growth accelerator"
+	},
+	"ethics": {
+		"label": "UNION Code of Ethics",
+		"titleLine1": "The foundation of",
+		"titleLine2": "every interaction",
+		"subtitle": "Six principles that define the quality of our community",
+		"values": [
+			{ "title": "Integrity", "text": "Transparency in business and relationships." },
+			{ "title": "Leadership", "text": "The willingness to lead and own the outcome." },
+			{ "title": "Accountability", "text": "Keeping commitments to yourself, your team, and the community." },
+			{ "title": "Trust", "text": "A safe space to share experience openly." },
+			{ "title": "Respect", "text": "Recognizing each resident’s achievements and boundaries." },
+			{ "title": "Dialogue", "text": "Solving challenges constructively through collective intelligence." }
+		]
+	},
+	"levels": {
+		"label": "Community architecture",
+		"titleLine": "5 membership tiers at",
+		"titleBrand": "UNION",
+		"subtitle": "From first contact to deep transformation — find your tier",
+		"priceLabel": "Pricing"
+	},
+	"membership": {
+		"titleBefore": "Choose ",
+		"titleGold": "your tier",
+		"subtitle": "Each tier includes everything in the previous one",
+		"founderBadge": "FOUNDER",
+		"founderTitle": "A special participation format",
+		"founderText": "For business owners ready for deep personal and team transformation.",
+		"founderBullets": [
+			"2-day strategic session with an expert",
+			"Personal support: 52 meetings per year (21 online + 21 offline)",
+			"Closed sessions with UNION founders twice a year"
+		],
+		"founderCta": "Discuss terms"
+	},
+	"catalog": {
+		"titleBefore": "Learning ",
+		"titleGold": "catalog",
+		"subtitle": "17 programs in three tracks from practicing experts"
+	},
+	"projects": {
+		"titleBefore": "Exclusive ",
+		"titleGold": "projects",
+		"titleAfter": " of the community",
+		"subtitle": "Additional opportunities for UNION residents",
+		"c1Label": "For your business",
+		"c1Title": "Outsourced competency development",
+		"c1Desc": "We take on corporate learning end to end — from diagnostics to employee assessment systems.",
+		"c1Li1": "Needs analysis and gap mapping (competency map)",
+		"c1Li2": "Custom learning program design",
+		"c1Li3": "Assessment and LMS implementation",
+		"c2Label": "For your future",
+		"c2Title": "“Heritage” young entrepreneurs school",
+		"c2Desc": "For children and youth of residents: hands-on entrepreneurship with mentor guidance.",
+		"c2Li1": "Entrepreneurship and financial literacy fundamentals",
+		"c2Li2": "Leadership skills for young people",
+		"c2Li3": "Practical projects and startups with resident mentors"
+	},
+	"funnel": {
+		"titleGold": "8 steps",
+		"titleRest": " to residency",
+		"subtitle": "A transparent selection process — from application to first networking"
+	},
+	"security": {
+		"label": "Security and exclusivity",
+		"titlePart1": "Why is our selection",
+		"titlePart2": "so ",
+		"titleGold": "strict?",
+		"b1Title": "Healthy environment",
+		"b1Text": "Reputation and background checks ensure you are surrounded by reliable partners with transparent businesses.",
+		"b2Title": "Absolute confidentiality",
+		"b2Text": "Every resident signs an NDA so you can discuss real business issues without leakage risk.",
+		"quote": "Your level of openness is protected legally."
+	},
+	"application": {
+		"label": "Start here",
+		"titleLine1": "Your next level",
+		"titleLine2Before": "starts ",
+		"titleGold": "here",
+		"subtitle": "Complete the first screening and join the Union Consulting Group ecosystem.",
+		"fieldName": "Your name *",
+		"fieldPhone": "Phone *",
+		"fieldRevenue": "Company revenue *",
+		"fieldMessage": "Your request (optional)",
+		"placeholderName": "John Smith",
+		"placeholderPhone": "+7 (___) ___-__-__",
+		"selectPlaceholder": "Select an option",
+		"placeholderMessage": "Describe what you want from the community...",
+		"checkbox": "I agree to the processing of personal data",
+		"submit": "Submit application",
+		"submitting": "Sending...",
+		"errorDefault": "Could not submit the application. Try again later or call us.",
+		"successTitle": "Application sent!",
+		"successText": "We will contact you within 24 hours to confirm details.",
+		"rev": {
+			"employee": "Employed",
+			"under100": "Up to 100M ₽ per year",
+			"100-500": "100–500M ₽ per year",
+			"500plus": "500M ₽ per year and above"
+		}
+	},
+	"seo": {
+		"title": "{site} — Private business community",
+		"description": "A private business community and consulting for entrepreneurs. An ecosystem for scaling you and your business."
+	},
+	"schema": {
+		"slogan": "An ecosystem for scaling you and your business",
+		"serviceName": "UNION consulting and private business community",
+		"serviceType1": "Business consulting",
+		"serviceType2": "Educational programs for entrepreneurs",
+		"serviceType3": "Private business community",
+		"countryName": "Russia",
+		"offerCatalogName": "UNION participation tiers",
+		"offerStart": "Foundation: education, group consulting, networking.",
+		"offerBusiness": "Scaling: personal consulting, board of directors, business visits.",
+		"offerPremier": "Influence: private formats, strategy sessions, and extended access.",
+		"offerFounder": "Deep personal and team transformation with dedicated support.",
+		"sectionsListName": "Homepage sections",
+		"secHero": "Hero",
+		"secAbout": "About",
+		"secEthics": "Code of ethics",
+		"secLevels": "Membership tiers",
+		"secMembership": "Participation packages",
+		"secCatalog": "Learning catalog",
+		"secProjects": "Community projects",
+		"secFunnel": "Selection funnel",
+		"secSecurity": "Security",
+		"secApplication": "Application form"
+	},
+	"error": {
+		"404": "Page not found",
+		"403": "Access denied",
+		"default": "Something went wrong",
+		"detail404": "The requested address does not exist or has been moved.",
+		"detail403": "You do not have permission to view this section.",
+		"detailDefault": "Try returning home or come back later.",
+		"label": "Error",
+		"home": "Back to home",
+		"footnote": "If the issue persists, contact us via the form on the homepage."
+	}
+}

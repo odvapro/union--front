@@ -1,0 +1,36 @@
+[
+	{
+		"name": "GUEST",
+		"desc": "Introduction before joining",
+		"detail": "A one-time guest visit with access to selected events to accurately assess the value of the ecosystem.",
+		"width": 40
+	},
+	{
+		"name": "START",
+		"desc": "Early-stage entrepreneurs and employees",
+		"detail": "Foundation: education, group consulting, networking, community manager.",
+		"price": "5,000 ₽ / visit · 15,000 ₽ / month",
+		"width": 55
+	},
+	{
+		"name": "BUSINESS",
+		"desc": "Revenue 100–500M ₽ per year",
+		"detail": "Scaling: personal consulting, Board of Directors, business visits + full START package.",
+		"price": "10,000 ₽ / visit · 45,000 ₽ / month",
+		"width": 70
+	},
+	{
+		"name": "PREMIER",
+		"desc": "Revenue from 500M ₽ per year",
+		"detail": "Influence: 2 consultations/mo, strategy session, private dinners, Union Council membership + START + BUSINESS.",
+		"price": "By resident referral",
+		"lock": true,
+		"width": 85
+	},
+	{
+		"name": "FOUNDER",
+		"desc": "Deep personal and team transformation",
+		"detail": "52 tracking meetings per year, 2-day strategy session, closed sessions with UNION founders twice a year.",
+		"width": 100
+	}
+]

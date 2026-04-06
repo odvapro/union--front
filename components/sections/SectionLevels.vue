@@ -1,5 +1,11 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
+	import levelsRu from '~/data/levels.ru.json';
+	import levelsEn from '~/data/levels.en.json';
+
+	const { t, locale } = useI18n();
+
+	const levels = computed(() => (locale.value === 'en' ? levelsEn : levelsRu));
 
 	onMounted(() =>
 	{
@@ -19,43 +25,6 @@
 		});
 	});
 
-	const levels = [
-		{
-			name: 'GUEST',
-			desc: 'Знакомство перед вступлением',
-			detail: 'Разовый гостевой визит с доступом к выбранным мероприятиям для точной оценки ценности экосистемы.',
-			width: 40,
-		},
-		{
-			name: 'START',
-			desc: 'Начинающие предприниматели и сотрудники',
-			detail: 'Фундамент: образование, групповой консалтинг, нетворкинг, комьюнити менеджер.',
-			price: '5 000 ₽ / визит · 15 000 ₽ / мес',
-			width: 55,
-		},
-		{
-			name: 'BUSINESS',
-			desc: 'Оборот 100–500 млн в год',
-			detail: 'Масштабирование: персональный консалтинг, Совет Директоров, бизнес-экскурсии + весь пакет START.',
-			price: '10 000 ₽ / визит · 45 000 ₽ / мес',
-			width: 70,
-		},
-		{
-			name: 'PREMIER',
-			desc: 'Оборот от 500 млн в год',
-			detail: 'Влияние: 2 консультации/мес, стратсессия, закрытые ужины, членство в Совете Union + START + BUSINESS.',
-			price: 'По рекомендации резидентов',
-			lock: true,
-			width: 85,
-		},
-		{
-			name: 'FOUNDER',
-			desc: 'Глубокая личная и командная трансформация',
-			detail: '52 трекинг-встречи в год, 2-дневная стратсессия, участие в закрытых сессиях с основателями UNION.',
-			width: 100,
-		},
-	];
-
 	const activeLevel = ref(2);
 </script>
 
@@ -63,12 +32,12 @@
 	<section id="levels" class="section levels">
 		<div class="container">
 			<div class="levels__header">
-				<p class="levels__label">Архитектура сообщества</p>
+				<p class="levels__label">{{ t('levels.label') }}</p>
 				<h2 class="section__title">
-					5 уровней членства <span class="gold-text">UNION</span>
+					{{ t('levels.titleLine') }} <span class="gold-text">{{ t('levels.titleBrand') }}</span>
 				</h2>
 				<p class="section__subtitle">
-					От первого знакомства до глубокой трансформации — найдите свой уровень
+					{{ t('levels.subtitle') }}
 				</p>
 			</div>
 
@@ -96,7 +65,7 @@
 					<p class="levels__detail-text">{{ levels[activeLevel].detail }}</p>
 				</div>
 				<div v-if="levels[activeLevel].price" class="levels__detail-price">
-					<span class="levels__price-label">Стоимость</span>
+					<span class="levels__price-label">{{ t('levels.priceLabel') }}</span>
 					<span class="levels__price-value">{{ levels[activeLevel].price }}</span>
 				</div>
 			</div>

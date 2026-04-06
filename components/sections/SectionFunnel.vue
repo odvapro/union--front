@@ -1,5 +1,11 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
+	import funnelRu from '~/data/funnel-steps.ru.json';
+	import funnelEn from '~/data/funnel-steps.en.json';
+
+	const { t, locale } = useI18n();
+
+	const steps = computed(() => (locale.value === 'en' ? funnelEn : funnelRu));
 
 	onMounted(() =>
 	{
@@ -14,48 +20,6 @@
 		});
 	});
 
-	const steps = [
-		{
-			num: '01',
-			title: 'Заявка',
-			desc: 'Заполнение формы на сайте',
-		},
-		{
-			num: '02',
-			title: 'Первичный звонок',
-			desc: 'Уточнение целей и ценностей',
-		},
-		{
-			num: '03',
-			title: 'Анкетирование',
-			desc: 'Глубокий анализ оборота и запросов',
-		},
-		{
-			num: '04',
-			title: 'Проверка СБ',
-			desc: 'Репутационный и юридический аудит',
-		},
-		{
-			num: '05',
-			title: 'Собеседование с Советом',
-			desc: 'Личная защита кандидатуры',
-		},
-		{
-			num: '06',
-			title: 'Пробное участие',
-			desc: 'Формат «гостя» на 1 мероприятии',
-		},
-		{
-			num: '07',
-			title: 'Документы',
-			desc: 'Подписание договора, NDA и Кодекса этики',
-		},
-		{
-			num: '08',
-			title: 'Онбординг',
-			desc: 'Знакомство с куратором и первый нетворкинг',
-		},
-	];
 </script>
 
 <template>
@@ -63,10 +27,10 @@
 		<div class="container">
 			<div class="funnel__header">
 				<h2 class="section__title">
-					<span class="gold-text">8 шагов</span> к резидентству
+					<span class="gold-text">{{ t('funnel.titleGold') }}</span>{{ t('funnel.titleRest') }}
 				</h2>
 				<p class="section__subtitle">
-					Прозрачный процесс отбора — от заявки до первого нетворкинга
+					{{ t('funnel.subtitle') }}
 				</p>
 			</div>
 

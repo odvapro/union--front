@@ -1,6 +1,7 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 
+	const { t } = useI18n();
 	const heroRef = ref(null);
 	const canvasRef = ref(null);
 
@@ -180,7 +181,7 @@
 			<div class="hero__content">
 				<div class="hero__badge">
 					<span class="hero__badge-dot" />
-					Закрытое бизнес-сообщество
+					{{ t('hero.badge') }}
 				</div>
 
 				<h1 class="hero__title">
@@ -190,34 +191,34 @@
 				</h1>
 
 				<p class="hero__subtitle">
-					Консалтинг и закрытое сообщество для предпринимателей.<br>
-					Экосистема для масштабирования личности и бизнеса.
+					{{ t('hero.subtitle1') }}<br>
+					{{ t('hero.subtitle2') }}
 				</p>
 
 				<div class="hero__actions">
 					<button class="hero__btn hero__btn--primary" @click="scrollToApplication">
-						<span>Оставить заявку</span>
+						<span>{{ t('hero.ctaPrimary') }}</span>
 						<IconsIconArrow :size="16" />
 					</button>
 					<button class="hero__btn hero__btn--outline" @click="scrollToAbout">
-						Узнать больше
+						{{ t('hero.ctaSecondary') }}
 					</button>
 				</div>
 
 				<div class="hero__stats">
 					<div class="hero__stat">
 						<span class="hero__stat-value">5</span>
-						<span class="hero__stat-label">уровней членства</span>
+						<span class="hero__stat-label">{{ t('hero.statLevels') }}</span>
 					</div>
 					<div class="hero__stat-sep" />
 					<div class="hero__stat">
 						<span class="hero__stat-value">17+</span>
-						<span class="hero__stat-label">программ обучения</span>
+						<span class="hero__stat-label">{{ t('hero.statPrograms') }}</span>
 					</div>
 					<div class="hero__stat-sep" />
 					<div class="hero__stat">
-						<span class="hero__stat-value">NDA</span>
-						<span class="hero__stat-label">конфиденциальность</span>
+						<span class="hero__stat-value">{{ t('hero.statNdaLabel') }}</span>
+						<span class="hero__stat-label">{{ t('hero.statNdaSub') }}</span>
 					</div>
 				</div>
 			</div>
@@ -245,7 +246,7 @@
 		</div>
 
 		<div class="hero__scroll-hint" @click="scrollToAbout">
-			<span class="hero__scroll-text">Прокрутите вниз</span>
+			<span class="hero__scroll-text">{{ t('hero.scrollHint') }}</span>
 			<div class="hero__scroll-line" />
 		</div>
 	</section>

@@ -1,6 +1,22 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 
+	const { t } = useI18n();
+
+	const ETHICS_COUNT = 6;
+
+	const values = computed(() =>
+	{
+		const rows = [];
+		for (let i = 0; i < ETHICS_COUNT; i++)
+			rows.push({
+				title: t(`ethics.values.${i}.title`),
+				text: t(`ethics.values.${i}.text`),
+			});
+
+		return rows;
+	});
+
 	onMounted(() =>
 	{
 		gsap.fromTo('.ethics__header', { autoAlpha: 0, y: 40 }, {
@@ -14,44 +30,18 @@
 		});
 	});
 
-	const values = [
-		{
-			title: 'Честность',
-			text: 'Прозрачность в бизнесе и отношениях.',
-		},
-		{
-			title: 'Лидерство',
-			text: 'Готовность вести за собой и брать ответственность за результат.',
-		},
-		{
-			title: 'Ответственность',
-			text: 'Выполнение обязательств перед собой, командой и сообществом.',
-		},
-		{
-			title: 'Доверие',
-			text: 'Безопасная среда для открытого обмена опытом.',
-		},
-		{
-			title: 'Уважение',
-			text: 'Признание достижений и границ каждого резидента.',
-		},
-		{
-			title: 'Диалог',
-			text: 'Конструктивное решение задач через коллективный разум.',
-		},
-	];
 </script>
 
 <template>
 	<section id="ethics" class="section ethics">
 		<div class="container">
 			<div class="ethics__header">
-				<p class="ethics__label">Кодекс этики UNION</p>
+				<p class="ethics__label">{{ t('ethics.label') }}</p>
 				<h2 class="section__title ethics__title">
-					Основа каждого<br>взаимодействия
+					{{ t('ethics.titleLine1') }}<br>{{ t('ethics.titleLine2') }}
 				</h2>
 				<p class="section__subtitle">
-					Шесть принципов, которые определяют качество нашего сообщества
+					{{ t('ethics.subtitle') }}
 				</p>
 			</div>
 

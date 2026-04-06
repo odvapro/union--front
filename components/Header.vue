@@ -3,14 +3,16 @@
 
 	const menuOpen = ref(false);
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
+	const { t, locale } = useI18n();
+	const switchLocalePath = useSwitchLocalePath();
 
-	const navLinks = [
-		{ label: 'О нас', href: '#about', num: '01' },
-		{ label: 'Уровни', href: '#levels', num: '02' },
-		{ label: 'Обучение', href: '#catalog', num: '03' },
-		{ label: 'Проекты', href: '#projects', num: '04' },
-		{ label: 'Заявка', href: '#application', num: '05' },
-	];
+	const navLinks = computed(() => [
+		{ label: t('nav.about'), href: '#about', num: '01' },
+		{ label: t('nav.levels'), href: '#levels', num: '02' },
+		{ label: t('nav.catalog'), href: '#catalog', num: '03' },
+		{ label: t('nav.projects'), href: '#projects', num: '04' },
+		{ label: t('nav.application'), href: '#application', num: '05' },
+	]);
 
 	function scrollTo(href)
 	{
@@ -92,36 +94,53 @@
 
 			<!-- Desktop nav -->
 			<nav class="hdr__nav">
-				<a
-					v-for="link in navLinks"
-					:key="link.href"
-					class="hdr__nav-link"
-					:href="link.href"
-					@click.prevent="scrollTo(link.href)"
-				>
-					{{ link.label }}
-				</a>
+				<div class="hdr__nav-inner">
+					<a
+						v-for="link in navLinks"
+						:key="link.href"
+						class="hdr__nav-link"
+						:href="link.href"
+						@click.prevent="scrollTo(link.href)"
+					>
+						{{ link.label }}
+					</a>
+				</div>
 			</nav>
 
-			<!-- Desktop CTA -->
-			<a
-				class="hdr__cta"
-				href="#application"
-				@click.prevent="scrollTo('#application')"
-			>
-				Вступить
-			</a>
+			<div class="hdr__trailing">
+				<div class="hdr__actions">
+					<div class="hdr__lang" :aria-label="t('header.switchLang')">
+						<NuxtLink
+							class="hdr__lang-link"
+							:class="{ 'hdr__lang-link--active': locale === 'ru' }"
+							:to="switchLocalePath('ru')"
+						>{{ t('header.langRu') }}</NuxtLink>
+						<NuxtLink
+							class="hdr__lang-link"
+							:class="{ 'hdr__lang-link--active': locale === 'en' }"
+							:to="switchLocalePath('en')"
+						>{{ t('header.langEn') }}</NuxtLink>
+					</div>
 
-			<!-- Burger -->
-			<button
-				class="hdr__burger"
-				:class="{ 'hdr__burger--active': menuOpen }"
-				aria-label="Открыть меню"
-				@click="toggleMenu"
-			>
-				<span class="hdr__burger-bar" />
-				<span class="hdr__burger-bar" />
-			</button>
+					<a
+						class="hdr__cta"
+						href="#application"
+						@click.prevent="scrollTo('#application')"
+					>
+						{{ t('header.cta') }}
+					</a>
+				</div>
+
+				<button
+					class="hdr__burger"
+					:class="{ 'hdr__burger--active': menuOpen }"
+					:aria-label="t('header.openMenu')"
+					@click="toggleMenu"
+				>
+					<span class="hdr__burger-bar" />
+					<span class="hdr__burger-bar" />
+				</button>
+			</div>
 		</div>
 	</header>
 
@@ -153,7 +172,7 @@
 						href="#application"
 						@click.prevent="scrollTo('#application')"
 					>
-						Оставить заявку
+						{{ t('header.applyOverlay') }}
 					</a>
 					<div class="nav-overlay__contacts">
 						<a :href="contactPhoneHref" class="nav-overlay__contact">{{ contactPhone }}</a>
@@ -175,19 +194,44 @@
 	left: 0;
 	right: 0;
 	z-index: 400;
-	background: rgba(13, 27, 46, 0.98);
-	backdrop-filter: blur(16px);
-	border-bottom: 1px solid $darkBorder;
-	box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+	background: linear-gradient(180deg, rgba(10, 18, 30, 0.97) 0%, rgba(13, 27, 46, 0.94) 100%);
+	backdrop-filter: blur(20px) saturate(1.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+	box-shadow:
+		0 1px 0 rgba(255, 255, 255, 0.04) inset,
+		0 8px 40px rgba(0, 0, 0, 0.35);
 	@include transition();
+
+	&::after
+	{
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(201, 168, 76, 0.45) 50%,
+			transparent 100%
+		);
+		pointer-events: none;
+		opacity: 0.85;
+	}
 }
 
 .hdr__inner
 {
-	display: flex;
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
 	align-items: center;
-	height: 76px;
-	gap: 0;
+	gap: 12px 20px;
+	min-height: 80px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 // Logo
@@ -195,13 +239,25 @@
 {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 12px;
 	text-decoration: none;
 	flex-shrink: 0;
-	margin-right: auto;
+	justify-self: start;
+	@include transition();
+
+	&:hover
+	{
+		.hdr__logo-name { color: $goldLight; }
+		.hdr__logo-mark { filter: brightness(1.08); }
+	}
 }
 
-.hdr__logo-mark { line-height: 0; flex-shrink: 0; }
+.hdr__logo-mark
+{
+	line-height: 0;
+	flex-shrink: 0;
+	@include transition();
+}
 
 .hdr__logo-text
 {
@@ -216,54 +272,121 @@
 	font-weight: 900;
 	letter-spacing: 0.18em;
 	color: $gold;
+	@include transition();
 }
 
 .hdr__logo-sub
 {
 	font-size: 0.5625rem;
-	letter-spacing: 0.12em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: $textSecondary;
-	margin-top: 2px;
+	color: rgba(160, 168, 184, 0.85);
+	margin-top: 3px;
 }
 
-// Desktop nav
+// Desktop nav (center column)
 .hdr__nav
 {
 	display: flex;
-	align-items: center;
-	gap: 36px;
-	margin-right: 36px;
+	justify-content: center;
+	justify-self: center;
+	width: 100%;
+	min-width: 0;
 
 	@include mq(0, 960) { display: none; }
+}
+
+.hdr__nav-inner
+{
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4px 8px;
+	padding: 6px 10px;
+	background: rgba(255, 255, 255, 0.035);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 999px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
 }
 
 .hdr__nav-link
 {
 	position: relative;
-	font-size: 0.875rem;
-	font-weight: 500;
-	color: $textSecondary;
+	padding: 8px 14px;
+	border-radius: 999px;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: rgba(200, 206, 218, 0.92);
 	text-decoration: none;
-	letter-spacing: 0.02em;
+	letter-spacing: 0.04em;
 	@include transition();
-
-	&::after
-	{
-		content: '';
-		position: absolute;
-		bottom: -3px;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: $gold;
-		@include transition();
-	}
 
 	&:hover
 	{
 		color: $textPrimary;
-		&::after { width: 100%; }
+		background: rgba(201, 168, 76, 0.1);
+	}
+
+	&:active
+	{
+		background: rgba(201, 168, 76, 0.16);
+	}
+}
+
+.hdr__trailing
+{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+	justify-self: end;
+}
+
+.hdr__actions
+{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+// Language segmented control
+.hdr__lang
+{
+	display: flex;
+	align-items: stretch;
+	padding: 3px;
+	background: rgba(0, 0, 0, 0.28);
+	border: 1px solid rgba(201, 168, 76, 0.18);
+	border-radius: 10px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.hdr__lang-link
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 38px;
+	padding: 7px 10px;
+	border-radius: 7px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	color: rgba(160, 168, 184, 0.95);
+	text-decoration: none;
+	@include transition();
+
+	&:hover
+	{
+		color: $textPrimary;
+	}
+
+	&--active
+	{
+		color: $dark;
+		background: linear-gradient(165deg, $goldLight 0%, $gold 100%);
+		box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
 	}
 }
 
@@ -272,23 +395,34 @@
 {
 	display: inline-flex;
 	align-items: center;
-	padding: 10px 22px;
-	border: 1px solid rgba(201,168,76,0.5);
-	border-radius: 6px;
-	font-size: 0.875rem;
-	font-weight: 600;
-	color: $gold;
+	padding: 11px 22px;
+	border-radius: 10px;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	color: $dark;
 	text-decoration: none;
-	letter-spacing: 0.03em;
-	@include transition();
+	letter-spacing: 0.06em;
 	flex-shrink: 0;
+	background: linear-gradient(165deg, $goldLight 0%, $gold 100%);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow:
+		0 2px 0 rgba(0, 0, 0, 0.15),
+		0 8px 24px rgba(201, 168, 76, 0.22);
+	@include transition();
 
 	&:hover
 	{
-		background: $gold;
-		color: $dark;
-		border-color: $gold;
-		box-shadow: 0 0 20px rgba(201,168,76,0.25);
+		filter: brightness(1.06);
+		box-shadow:
+			0 2px 0 rgba(0, 0, 0, 0.12),
+			0 10px 28px rgba(201, 168, 76, 0.35);
+		transform: translateY(-1px);
+	}
+
+	&:active
+	{
+		transform: translateY(0);
+		filter: brightness(0.98);
 	}
 
 	@include mq(0, 960) { display: none; }
@@ -300,14 +434,14 @@
 	display: none;
 	flex-direction: column;
 	justify-content: center;
-	gap: 7px;
-	width: 40px;
-	height: 40px;
-	background: rgba(201,168,76,0.06);
-	border: 1px solid rgba(201,168,76,0.2);
-	border-radius: 8px;
+	gap: 6px;
+	width: 44px;
+	height: 44px;
+	background: rgba(201, 168, 76, 0.08);
+	border: 1px solid rgba(201, 168, 76, 0.22);
+	border-radius: 10px;
 	cursor: pointer;
-	padding: 0 10px;
+	padding: 0 11px;
 	flex-shrink: 0;
 	@include transition();
 
@@ -315,26 +449,27 @@
 
 	&:hover
 	{
-		background: rgba(201,168,76,0.12);
-		border-color: rgba(201,168,76,0.4);
+		background: rgba(201, 168, 76, 0.14);
+		border-color: rgba(201, 168, 76, 0.45);
 	}
 }
 
 .hdr__burger-bar
 {
 	display: block;
-	height: 1.5px;
-	background: $gold;
+	height: 2px;
+	border-radius: 1px;
+	background: linear-gradient(90deg, $goldLight, $gold);
 	@include transition();
 
 	.hdr__burger--active &:nth-child(1)
 	{
-		transform: translateY(4.25px) rotate(45deg);
+		transform: translateY(4px) rotate(45deg);
 	}
 
 	.hdr__burger--active &:nth-child(2)
 	{
-		transform: translateY(-4.25px) rotate(-45deg);
+		transform: translateY(-4px) rotate(-45deg);
 	}
 }
 
@@ -365,7 +500,7 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	padding: 76px 0 40px;
+	padding: 80px 0 40px;
 	max-width: 960px;
 	width: 100%;
 	margin: 0 auto;

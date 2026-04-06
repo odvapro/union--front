@@ -1,6 +1,8 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 
+	const { t } = useI18n();
+
 	onMounted(() =>
 	{
 		gsap.fromTo('.security__text', { autoAlpha: 0, y: 40 }, {
@@ -25,9 +27,9 @@
 		<div class="container">
 			<div class="security__inner">
 				<div class="security__text">
-					<p class="security__label">Безопасность и Эксклюзивность</p>
+					<p class="security__label">{{ t('security.label') }}</p>
 					<h2 class="section__title">
-						Почему наш отбор<br>такой <span class="gold-text">строгий?</span>
+						{{ t('security.titlePart1') }}<br>{{ t('security.titlePart2') }}<span class="gold-text">{{ t('security.titleGold') }}</span>
 					</h2>
 
 					<div class="security__blocks">
@@ -36,10 +38,9 @@
 								<IconsIconShieldCheck style="color: #c9a84c" />
 							</div>
 							<div>
-								<h3 class="security__block-title">Экологичность среды</h3>
+								<h3 class="security__block-title">{{ t('security.b1Title') }}</h3>
 								<p class="security__block-text">
-									Проверка репутации и публичной истории гарантирует, что вас окружают
-									только надёжные партнёры с прозрачным бизнесом.
+									{{ t('security.b1Text') }}
 								</p>
 							</div>
 						</div>
@@ -49,17 +50,16 @@
 								<IconsIconLock style="color: #c9a84c" />
 							</div>
 							<div>
-								<h3 class="security__block-title">Абсолютная конфиденциальность</h3>
+								<h3 class="security__block-title">{{ t('security.b2Title') }}</h3>
 								<p class="security__block-text">
-									Подписание NDA каждым резидентом создаёт закрытое пространство, где можно
-									обсуждать реальные проблемы бизнеса без риска утечки.
+									{{ t('security.b2Text') }}
 								</p>
 							</div>
 						</div>
 					</div>
 
 					<div class="security__quote">
-						Ваш уровень откровенности защищён на юридическом уровне.
+						{{ t('security.quote') }}
 					</div>
 				</div>
 

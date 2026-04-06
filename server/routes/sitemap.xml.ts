@@ -4,9 +4,16 @@ export default defineEventHandler((event) => {
 	const baseUrl = runtimeConfig.public.siteUrl || requestUrl.origin;
 	const currentDate = new Date().toISOString().split('T')[0];
 
+	const normalizedBase = String(baseUrl).replace(/\/+$/, '');
+
 	const urls = [
 		{
-			loc: `${baseUrl}/`,
+			loc: `${normalizedBase}/`,
+			changefreq: 'weekly',
+			priority: '1.0',
+		},
+		{
+			loc: `${normalizedBase}/en`,
 			changefreq: 'weekly',
 			priority: '1.0',
 		},

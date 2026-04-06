@@ -1,0 +1,134 @@
+[
+	{
+		"name": "START",
+		"tag": "Foundation",
+		"audience": "Early-stage entrepreneurs and employed professionals",
+		"price": "15,000 ₽ / month",
+		"priceVisit": "5,000 ₽ / visit",
+		"color": "#a07840",
+		"blocks": [
+			{
+				"title": "Education",
+				"items": [
+					"Preferential access to Netology courses",
+					"Accelerator for early-stage entrepreneurs",
+					"Accelerator for employed professionals",
+					"10% off UNION educational products"
+				]
+			},
+			{
+				"title": "Consulting",
+				"items": [
+					"Annual personal diagnostic — personality audit",
+					"1 group consulting session per month with UNION experts",
+					"2 group sessions per year led by BUSINESS residents"
+				]
+			},
+			{
+				"title": "Networking",
+				"items": [
+					"Monthly forum with speakers",
+					"Monthly MasterMind / Codevelopment",
+					"Annual networking with BUSINESS residents",
+					"Annual all-UNION residents meetup"
+				]
+			},
+			{
+				"title": "Support",
+				"items": [
+					"Group community manager"
+				]
+			}
+		]
+	},
+	{
+		"name": "BUSINESS",
+		"tag": "Scale",
+		"audience": "Entrepreneurs with revenue of 100–500M ₽ per year",
+		"price": "45,000 ₽ / month",
+		"priceVisit": "10,000 ₽ / visit",
+		"note": "+ full access to START package options",
+		"color": "#c9a84c",
+		"featured": true,
+		"blocks": [
+			{
+				"title": "Education",
+				"items": [
+					"Preferential Netology access for the resident and employees",
+					"Monthly accelerator seat for 1 employee",
+					"Access to monthly offline seminars (50+ lessons)",
+					"2 seminar seats for employees once per year",
+					"15% off UNION educational products"
+				]
+			},
+			{
+				"title": "Consulting",
+				"items": [
+					"Annual diagnostic with expert debrief",
+					"1 personal 2-hour consulting session per month",
+					"2 group sessions per year led by PREMIER residents",
+					"Personal Board of Directors twice a year",
+					"“Lifecycle management” course worth 200,000 ₽"
+				]
+			},
+			{
+				"title": "Networking",
+				"items": [
+					"Monthly forum and MasterMind with BUSINESS residents",
+					"Business visits to fellow club members",
+					"2 annual networking events with PREMIER residents",
+					"Host your own event at UNION twice a year"
+				]
+			},
+			{
+				"title": "Support",
+				"items": [
+					"Dedicated community manager"
+				]
+			}
+		]
+	},
+	{
+		"name": "PREMIER",
+		"tag": "Influence",
+		"audience": "Entrepreneurs with revenue from 500M ₽ per year",
+		"price": "By referral",
+		"note": "+ full access to START and BUSINESS",
+		"lock": true,
+		"color": "#e8c97a",
+		"blocks": [
+			{
+				"title": "Education",
+				"items": [
+					"Unlimited access to offline seminars",
+					"4 seminar seats for employees once per year",
+					"20% off UNION educational products"
+				]
+			},
+			{
+				"title": "Consulting",
+				"items": [
+					"Diagnostic + IDP with a UNION expert",
+					"2 personal consulting sessions per month + tracking",
+					"2-day strategic session once per year",
+					"Personal Board of Directors twice a year"
+				]
+			},
+			{
+				"title": "Networking",
+				"items": [
+					"Private dinner with a speaker every month",
+					"Business visits to major companies in Russia and worldwide",
+					"Union Council membership (agenda influence)",
+					"Host an event at UNION four times a year"
+				]
+			},
+			{
+				"title": "Support",
+				"items": [
+					"Dedicated community manager"
+				]
+			}
+		]
+	}
+]

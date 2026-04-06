@@ -13,9 +13,6 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			htmlAttrs: {
-				lang: 'ru',
-			},
 			meta: [
 				{ name: 'theme-color', content: '#0F1115' },
 			],
@@ -30,7 +27,22 @@ export default defineNuxtConfig({
 		},
 	},
 
-	modules: ['@pinia/nuxt', '@vueuse/nuxt'],
+	modules: ['@pinia/nuxt', '@vueuse/nuxt', '@nuxtjs/i18n'],
+
+	i18n: {
+		locales: [
+			{ code: 'ru', language: 'ru-RU', file: 'ru.json', name: 'Русский' },
+			{ code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
+		],
+		lazy: true,
+		langDir: 'locales',
+		defaultLocale: 'ru',
+		strategy: 'prefix_except_default',
+		detectBrowserLanguage: false,
+		compilation: {
+			strictMessage: false,
+		},
+	},
 
 	// css base configuration
 	css: ['@/assets/styles/index.scss'],
