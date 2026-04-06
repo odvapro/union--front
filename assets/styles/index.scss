@@ -1,6 +1,11 @@
 @import url('@/assets/styles/base/_fonts.scss');
 @import url('@/assets/styles/base/_global.scss');
 
+html
+{
+	overflow-x: hidden;
+}
+
 *, *::after, *::before
 {
 	box-sizing: border-box;
@@ -8,12 +13,13 @@
 	padding: 0;
 	scroll-behavior: smooth;
 	font-family: $firstFont;
-	color: $black;
+	color: $textPrimary;
 }
 
 body
 {
-	&:has(.huge-preloader) { overflow: hidden; }
+	overflow-x: hidden;
+	background-color: $dark;
 }
 
 a { text-decoration: none; }
@@ -22,7 +28,7 @@ a { text-decoration: none; }
 {
 	max-width: $desktop;
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 24px;
 }
 
 // transition -----------
