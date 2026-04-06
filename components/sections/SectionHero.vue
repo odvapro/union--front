@@ -231,7 +231,9 @@
 						<div class="hero__orb-ring hero__orb-ring--2" />
 						<div class="hero__orb-ring hero__orb-ring--3" />
 						<div class="hero__orb-core">
-							<span>UNION</span>
+							<div class="hero__orb-logo">
+								<IconsIconLogoMark :width="72" :height="21" />
+							</div>
 						</div>
 					</div>
 
@@ -548,13 +550,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
 
-	span
+.hero__orb-logo
+{
+	line-height: 0;
+
+	svg path
 	{
-		font-size: 0.75rem;
-		font-weight: 900;
-		letter-spacing: 0.2em;
-		color: $gold;
+		fill: $gold;
 	}
 }
 

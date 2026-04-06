@@ -51,11 +51,7 @@
 				<div class="site-footer__brand">
 					<NuxtLink class="site-footer__logo" :to="localePath('/')" @click="onLogoClick">
 						<div class="site-footer__logo-mark">
-							<IconsIconLogoMark :width="36" :height="36" />
-						</div>
-						<div class="site-footer__logo-text">
-							<span class="site-footer__logo-name">UNION</span>
-							<span class="site-footer__logo-sub">Consulting Group</span>
+							<IconsIconLogoMark :width="120" :height="35" />
 						</div>
 					</NuxtLink>
 
@@ -185,35 +181,10 @@
 {
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
 	text-decoration: none;
 }
 
 .site-footer__logo-mark { line-height: 0; flex-shrink: 0; }
-
-.site-footer__logo-text
-{
-	display: flex;
-	flex-direction: column;
-	line-height: 1;
-}
-
-.site-footer__logo-name
-{
-	font-size: 1.25rem;
-	font-weight: 900;
-	letter-spacing: 0.18em;
-	color: $gold;
-}
-
-.site-footer__logo-sub
-{
-	font-size: 0.5625rem;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: $textSecondary;
-	margin-top: 2px;
-}
 
 .site-footer__tagline
 {

@@ -60,11 +60,7 @@
 			<div class="error-page__card gold-border">
 				<div class="error-page__brand">
 					<div class="error-page__logo">
-						<IconsIconLogoMark :width="40" :height="40" />
-					</div>
-					<div class="error-page__brand-text">
-						<span class="error-page__brand-name">UNION</span>
-						<span class="error-page__brand-sub">Consulting Group</span>
+						<IconsIconLogoMark :width="112" :height="32" />
 					</div>
 				</div>
 
@@ -157,39 +153,13 @@
 
 	.error-page__brand
 	{
-		display: inline-flex;
+		display: flex;
 		align-items: center;
-		gap: 12px;
+		justify-content: center;
 		margin-bottom: 28px;
 	}
 
 	.error-page__logo { line-height: 0; }
-
-	.error-page__brand-text
-	{
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		line-height: 1;
-		text-align: left;
-	}
-
-	.error-page__brand-name
-	{
-		font-size: 1.125rem;
-		font-weight: 900;
-		letter-spacing: 0.18em;
-		color: $gold;
-	}
-
-	.error-page__brand-sub
-	{
-		font-size: 0.5625rem;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: $textSecondary;
-		margin-top: 2px;
-	}
 
 	.error-page__label
 	{

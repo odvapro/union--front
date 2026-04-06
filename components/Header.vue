@@ -96,11 +96,7 @@
 			<!-- Logo -->
 			<NuxtLink class="hdr__logo" :to="localePath('/')" @click="onLogoClick">
 				<div class="hdr__logo-mark">
-					<IconsIconLogoMark />
-				</div>
-				<div class="hdr__logo-text">
-					<span class="hdr__logo-name">UNION</span>
-					<span class="hdr__logo-sub">Consulting Group</span>
+					<IconsIconLogoMark :width="100" :height="29" />
 				</div>
 			</NuxtLink>
 
@@ -251,7 +247,6 @@
 {
 	display: flex;
 	align-items: center;
-	gap: 12px;
 	text-decoration: none;
 	flex-shrink: 0;
 	justify-self: start;
@@ -259,7 +254,6 @@
 
 	&:hover
 	{
-		.hdr__logo-name { color: $goldLight; }
 		.hdr__logo-mark { filter: brightness(1.08); }
 	}
 }
@@ -269,31 +263,6 @@
 	line-height: 0;
 	flex-shrink: 0;
 	@include transition();
-}
-
-.hdr__logo-text
-{
-	display: flex;
-	flex-direction: column;
-	line-height: 1;
-}
-
-.hdr__logo-name
-{
-	font-size: 1.1875rem;
-	font-weight: 900;
-	letter-spacing: 0.18em;
-	color: $gold;
-	@include transition();
-}
-
-.hdr__logo-sub
-{
-	font-size: 0.5625rem;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: rgba(160, 168, 184, 0.85);
-	margin-top: 3px;
 }
 
 // Desktop nav (center column)
