@@ -24,7 +24,8 @@
 		"contactsTitle": "Contacts",
 		"apply": "Submit application",
 		"copy": "© {year} Union Consulting Group. All rights reserved.",
-		"legal": "Privacy policy · NDA on admission"
+		"privacyLink": "Privacy policy",
+		"legalNda": "NDA on admission"
 	},
 	"hero": {
 		"badge": "Private business community",
@@ -147,7 +148,8 @@
 		"placeholderPhone": "+7 (___) ___-__-__",
 		"selectPlaceholder": "Select an option",
 		"placeholderMessage": "Describe what you want from the community...",
-		"checkbox": "I agree to the processing of personal data",
+		"checkboxBefore": "I agree to the ",
+		"checkboxPolicy": "privacy policy",
 		"submit": "Submit application",
 		"submitting": "Sending...",
 		"errorDefault": "Could not submit the application. Try again later or call us.",
@@ -198,5 +200,66 @@
 		"label": "Error",
 		"home": "Back to home",
 		"footnote": "If the issue persists, contact us via the form on the homepage."
+	},
+	"privacyPage": {
+		"seoTitle": "Privacy policy — Union Consulting Group",
+		"seoDesc": "How Union Consulting Group processes and protects personal data of website users and ecosystem participants.",
+		"title": "Privacy policy",
+		"back": "Back to home",
+		"intro": "We, {site}, process personal data in accordance with applicable law, including Federal Law No. 152-FZ “On Personal Data” (where applicable to our activities in the Russian Federation), and are committed to protecting your privacy. This Policy describes what personal data we may collect when you use the website, submit an application, and interact within our private business community and consulting services, and how we process, store, and protect it.",
+		"s1Title": "1. Categories of personal data we may collect",
+		"s1": {
+			"i0": "Full name (if provided) and contact details: phone number, email address.",
+			"i1": "Information you provide in application forms and communications with us, including company revenue band, goals, and accompanying messages.",
+			"i2": "Technical data: IP address, browser, device and OS information, cookies, and page visit logs — for site operation, security, and analytics.",
+			"i3": "Other information you voluntarily provide when participating in programs, events, or community surveys.",
+			"i4": "Data required to perform contracts and meet admission requirements for the community (including restricted access and NDA workflows where applicable to your case)."
+		},
+		"s2Title": "2. Purposes of processing",
+		"s2": {
+			"i0": "Reviewing applications, communicating with candidates and residents, and supporting selection and onboarding.",
+			"i1": "Performing contractual obligations and delivering consulting, educational, and community services.",
+			"i2": "Informing you about events, programs, and ecosystem updates — where you have given consent or another lawful basis applies.",
+			"i3": "Improving the website, service quality, and user experience, including through aggregated or anonymized analytics.",
+			"i4": "Complying with Russian Federation law and protecting the legitimate interests of the operator and users."
+		},
+		"s3Title": "3. Storage and security",
+		"s3": {
+			"i0": "We apply organizational and technical measures, including access restrictions for authorized staff and partners, and secure channels where appropriate.",
+			"i1": "Encryption and other safeguards may be used in line with risk level and security requirements.",
+			"i2": "We periodically review procedures and controls; access to data follows the need-to-know principle."
+		},
+		"s3Outro": "Retention periods depend on processing purposes, the term of our agreement with you, and legal requirements; when purposes are achieved, data is deleted or anonymized unless the law requires otherwise.",
+		"s4Title": "4. Sharing with third parties",
+		"s4": {
+			"i0": "Contractors who provide services on our behalf (e.g. hosting, IT support, email delivery) — only as needed, under confidentiality and data processing agreements.",
+			"i1": "Payment and related services — only when required to process payments and fulfill obligations, with appropriate safeguards.",
+			"i2": "Government authorities — when required by Russian Federation law and procedure.",
+			"i3": "Analytics and research — in anonymized form that does not identify you without additional information."
+		},
+		"s5Title": "5. Cookies and similar technologies",
+		"s5Intro": "The site may use cookies and similar technologies for:",
+		"s5Purposes": {
+			"i0": "proper site operation and saving your preferences (technical cookies);",
+			"i1": "aggregated statistics on visits and behavior (analytics cookies, including services such as Yandex.Metrica or Google Analytics when enabled);",
+			"i2": "interface convenience and content personalization within your preferences and consents."
+		},
+		"s5TypesTitle": "Typical categories include:",
+		"s5Types": {
+			"i0": "strictly necessary cookies for site operation;",
+			"i1": "analytics cookies — to measure traffic and service quality;",
+			"i2": "functional cookies — to remember selected settings."
+		},
+		"s5Outro": "You can manage cookies in your browser settings (restrict, delete, or block); disabling some cookies may affect site functionality.",
+		"s6Title": "6. Your rights",
+		"s6Intro": "Under Federal Law No. 152-FZ you have the right to:",
+		"s6": {
+			"i0": "obtain information about the processing of your personal data;",
+			"i1": "request rectification, blocking, or erasure if data are incomplete, outdated, or processed unlawfully;",
+			"i2": "withdraw consent where processing is consent-based — subject to impact on our ability to provide services;",
+			"i3": "lodge a complaint with the competent authority (Roskomnadzor) or a court if you believe your rights have been violated."
+		},
+		"s7Title": "7. Contact",
+		"s7Text": "For questions about personal data processing, contact us using the details published on the website (phone, official site), or via the contact form when available."
 	}
 }

@@ -17,6 +17,16 @@ export default defineEventHandler((event) => {
 			changefreq: 'weekly',
 			priority: '1.0',
 		},
+		{
+			loc: `${normalizedBase}/privacy`,
+			changefreq: 'yearly',
+			priority: '0.5',
+		},
+		{
+			loc: `${normalizedBase}/en/privacy`,
+			changefreq: 'yearly',
+			priority: '0.5',
+		},
 	];
 
 	const urlsXml = urls

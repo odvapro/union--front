@@ -2,6 +2,8 @@
 	import { gsap } from '~/composables/useGsap';
 
 	const menuOpen = ref(false);
+	const route = useRoute();
+	const localePath = useLocalePath();
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 	const { t, locale } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
@@ -75,6 +77,16 @@
 	{
 		menuOpen.value ? closeMenu() : openMenu();
 	}
+
+	function onLogoClick(e)
+	{
+		if (route.path === localePath('/'))
+		{
+			e.preventDefault();
+			closeMenu();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+	}
 </script>
 
 <template>
@@ -82,7 +94,7 @@
 		<div class="container hdr__inner">
 
 			<!-- Logo -->
-			<a class="hdr__logo" href="#" @click.prevent="scrollTo('#about')">
+			<NuxtLink class="hdr__logo" :to="localePath('/')" @click="onLogoClick">
 				<div class="hdr__logo-mark">
 					<IconsIconLogoMark />
 				</div>
@@ -90,7 +102,7 @@
 					<span class="hdr__logo-name">UNION</span>
 					<span class="hdr__logo-sub">Consulting Group</span>
 				</div>
-			</a>
+			</NuxtLink>
 
 			<!-- Desktop nav -->
 			<nav class="hdr__nav">

@@ -1,7 +1,9 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
+	const route = useRoute();
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 	const { t } = useI18n();
+	const localePath = useLocalePath();
 
 	const navLinks = computed(() => [
 		{ label: t('nav.about'), href: '#about' },
@@ -15,6 +17,15 @@
 	{
 		const el = document.querySelector(href);
 		if (el) el.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	function onLogoClick(e)
+	{
+		if (route.path === localePath('/'))
+		{
+			e.preventDefault();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
 	}
 
 	onMounted(() =>
@@ -38,7 +49,7 @@
 
 				<!-- Brand -->
 				<div class="site-footer__brand">
-					<a class="site-footer__logo" href="#" @click.prevent="scrollTo('#about')">
+					<NuxtLink class="site-footer__logo" :to="localePath('/')" @click="onLogoClick">
 						<div class="site-footer__logo-mark">
 							<IconsIconLogoMark :width="36" :height="36" />
 						</div>
@@ -46,7 +57,7 @@
 							<span class="site-footer__logo-name">UNION</span>
 							<span class="site-footer__logo-sub">Consulting Group</span>
 						</div>
-					</a>
+					</NuxtLink>
 
 					<p class="site-footer__tagline">
 						{{ t('footer.tagline1') }}<br>{{ t('footer.tagline2') }}
@@ -112,7 +123,9 @@
 					{{ t('footer.copy', { year: currentYear }) }}
 				</p>
 				<p class="site-footer__legal">
-					{{ t('footer.legal') }}
+					<NuxtLink class="site-footer__legal-link" :to="localePath('/privacy')">{{ t('footer.privacyLink') }}</NuxtLink>
+					<span class="site-footer__legal-sep"> · </span>
+					<span>{{ t('footer.legalNda') }}</span>
 				</p>
 			</div>
 		</div>
@@ -363,7 +376,24 @@
 {
 	font-size: 0.75rem;
 	color: rgba(160,168,184,0.35);
+}
 
-	@include mq(0, 480) { display: none; }
+.site-footer__legal-link
+{
+	color: rgba(160,168,184,0.5);
+	text-decoration: none;
+	@include transition();
+
+	&:hover
+	{
+		color: $gold;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+}
+
+.site-footer__legal-sep
+{
+	user-select: none;
 }
 </style>

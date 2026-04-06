@@ -3,6 +3,7 @@
 	import { gsap } from '~/composables/useGsap';
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 	const { t } = useI18n();
+	const localePath = useLocalePath();
 
 	const revenueOptions = computed(() => [
 		{ value: 'employee', label: t('application.rev.employee') },
@@ -149,7 +150,12 @@
 							<input v-model="form.agree" type="checkbox">
 							<span class="application__checkbox-mark" />
 							<span class="application__checkbox-text">
-								{{ t('application.checkbox') }}
+								{{ t('application.checkboxBefore') }}
+								<NuxtLink
+									class="application__checkbox-link"
+									:to="localePath('/privacy')"
+									@click.stop
+								>{{ t('application.checkboxPolicy') }}</NuxtLink>
 							</span>
 						</label>
 
@@ -328,6 +334,19 @@
 	font-size: 0.8125rem;
 	color: $textSecondary;
 	line-height: 1.5;
+}
+
+.application__checkbox-link
+{
+	color: $gold;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	@include transition();
+
+	&:hover
+	{
+		color: $goldLight;
+	}
 }
 
 .application__error
