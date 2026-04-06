@@ -1,17 +1,17 @@
-// цвета — Union Consulting Group
-$dark: #0d1b2e;
-$darkCard: #0f2035;
-$darkBorder: #1e3451;
-$gold: #c9a84c;
-$goldLight: #e8c97a;
-$goldDim: rgba(201, 168, 76, 0.2);
-$textPrimary: #ffffff;
-$textSecondary: #a0a8b8;
-$black: #282C34;
-$gray: #82868E;
-$lightGray: #E8E8E7;
-$red: #DC1020;
-$white: #ffffff;
+// Семантические алиасы → CSS-переменные темы (см. _theme.scss)
+$dark: var(--color-page-bg);
+$darkCard: var(--color-surface);
+$darkBorder: var(--color-border-strong);
+$gold: var(--color-accent);
+$goldLight: var(--color-accent-hover);
+$goldDim: var(--color-accent-muted);
+$textPrimary: var(--color-text);
+$textSecondary: var(--color-text-muted);
+$black: var(--color-text);
+$gray: var(--color-text-muted);
+$lightGray: var(--color-surface-elevated);
+$red: var(--color-accent);
+$white: var(--color-text-on-accent);
 
 // Разрешения
 $tablet: 768px;

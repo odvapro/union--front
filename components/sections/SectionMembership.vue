@@ -73,7 +73,7 @@
 			<div class="membership__card gold-border">
 				<div class="membership__card-head">
 					<div>
-						<div class="membership__card-name" :style="{ color: plans[activePlan].color }">
+						<div class="membership__card-name">
 							{{ plans[activePlan].name }}
 							<span v-if="plans[activePlan].lock"> 🔒</span>
 						</div>
@@ -133,7 +133,6 @@
 {
 	display: flex;
 	gap: 8px;
-	margin-bottom: 2px;
 	flex-wrap: wrap;
 }
 
@@ -152,12 +151,12 @@
 
 	&--active
 	{
-		background: rgba(201,168,76,0.08);
+		background: rgba(var(--rgb-accent), 0.08);
 		border-color: $gold;
 		border-bottom-color: transparent;
 	}
 
-	&:hover:not(&--active) { border-color: rgba(201,168,76,0.3); }
+	&:hover:not(&--active) { border-color: rgba(var(--rgb-accent), 0.3); }
 }
 
 .membership__tab-name
@@ -201,6 +200,7 @@
 	font-weight: 800;
 	letter-spacing: 0.08em;
 	margin-bottom: 6px;
+	color: $gold;
 }
 
 .membership__card-audience
@@ -289,7 +289,7 @@
 	justify-content: space-between;
 	gap: 32px;
 	padding: 36px 40px;
-	background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, $darkCard 100%);
+	background: linear-gradient(135deg, rgba(var(--rgb-accent), 0.06) 0%, $darkCard 100%);
 
 	@include mq(0, 768) { flex-direction: column; align-items: flex-start; }
 }

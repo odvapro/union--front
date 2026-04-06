@@ -57,7 +57,7 @@
 <style lang="scss">
 .funnel
 {
-	background: linear-gradient(180deg, rgba(15,32,53,0.4) 0%, $dark 100%);
+	background: linear-gradient(180deg, $darkCard 0%, $dark 100%);
 }
 
 .funnel__header { margin-bottom: 56px; }
@@ -99,7 +99,7 @@
 	font-weight: 800;
 	color: $gold;
 	flex-shrink: 0;
-	background: rgba(201,168,76,0.06);
+	background: rgba(var(--rgb-accent), 0.06);
 }
 
 .funnel__step-line

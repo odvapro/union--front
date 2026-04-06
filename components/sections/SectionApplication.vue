@@ -89,11 +89,11 @@
 
 					<div class="application__contacts">
 						<a class="application__contact" :href="contactPhoneHref">
-							<IconsIconPhone style="color: #c9a84c" />
+							<IconsIconPhone class="g-icon-accent" />
 							{{ contactPhone }}
 						</a>
 						<a class="application__contact" :href="siteUrl" target="_blank">
-							<IconsIconGlobe style="color: #c9a84c" />
+							<IconsIconGlobe class="g-icon-accent" />
 							{{ siteHost }}
 						</a>
 					</div>
@@ -187,7 +187,7 @@
 <style lang="scss">
 .application
 {
-	background: radial-gradient(ellipse at 30% 60%, rgba(201,168,76,0.06) 0%, transparent 50%), $dark;
+	background: radial-gradient(ellipse at 30% 60%, rgba(var(--rgb-accent), 0.06) 0%, transparent 50%), $dark;
 }
 
 .application__inner
@@ -267,7 +267,7 @@
 .application__textarea
 {
 	padding: 14px 16px;
-	background: rgba(255,255,255,0.04);
+	background: var(--color-input-bg);
 	border: 1px solid $darkBorder;
 	border-radius: 8px;
 	font-size: 0.9375rem;
@@ -278,8 +278,8 @@
 	resize: none;
 	appearance: none;
 
-	&::placeholder { color: rgba(160,168,184,0.5); }
-	&:focus { border-color: $gold; background: rgba(201,168,76,0.04); }
+	&::placeholder { color: var(--color-input-placeholder); }
+	&:focus { border-color: $gold; background: rgba(var(--rgb-accent), 0.04); }
 
 	option { background: $darkCard; color: $textPrimary; }
 }
@@ -365,7 +365,7 @@
 	border-radius: 8px;
 	font-size: 1rem;
 	font-weight: 700;
-	color: $dark;
+	color: $white;
 	cursor: pointer;
 	@include transition();
 

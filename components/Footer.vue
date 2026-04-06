@@ -88,13 +88,13 @@
 					<div class="site-footer__contacts">
 						<a class="site-footer__contact-item" :href="contactPhoneHref">
 							<span class="site-footer__contact-icon">
-								<IconsIconPhone :size="14" style="color: #c9a84c" />
+								<IconsIconPhone class="g-icon-accent" :size="14" />
 							</span>
 							{{ contactPhone }}
 						</a>
 						<a class="site-footer__contact-item" :href="siteUrl" target="_blank">
 							<span class="site-footer__contact-icon">
-								<IconsIconGlobe :size="14" style="color: #c9a84c" />
+								<IconsIconGlobe class="g-icon-accent" :size="14" />
 							</span>
 							{{ siteHost }}
 						</a>
@@ -142,9 +142,9 @@
 	background: linear-gradient(
 		90deg,
 		transparent 0%,
-		rgba(201,168,76,0.1) 20%,
-		rgba(201,168,76,0.5) 50%,
-		rgba(201,168,76,0.1) 80%,
+		rgba(var(--rgb-accent), 0.1) 20%,
+		rgba(var(--rgb-accent), 0.5) 50%,
+		rgba(var(--rgb-accent), 0.1) 80%,
 		transparent 100%
 	);
 }
@@ -184,7 +184,16 @@
 	text-decoration: none;
 }
 
-.site-footer__logo-mark { line-height: 0; flex-shrink: 0; }
+.site-footer__logo-mark
+{
+	line-height: 0;
+	flex-shrink: 0;
+
+	svg path
+	{
+		fill: $textPrimary;
+	}
+}
 
 .site-footer__tagline
 {
@@ -203,13 +212,13 @@
 .site-footer__badge
 {
 	padding: 4px 12px;
-	border: 1px solid rgba(201,168,76,0.25);
+	border: 1px solid rgba(var(--rgb-accent), 0.25);
 	border-radius: 100px;
 	font-size: 0.6875rem;
 	font-weight: 600;
 	letter-spacing: 0.08em;
 	color: $gold;
-	background: rgba(201,168,76,0.05);
+	background: rgba(var(--rgb-accent), 0.05);
 }
 
 // Columns
@@ -223,7 +232,7 @@
 	text-transform: uppercase;
 	color: $gold;
 	padding-bottom: 12px;
-	border-bottom: 1px solid rgba(201,168,76,0.15);
+	border-bottom: 1px solid rgba(var(--rgb-accent), 0.15);
 }
 
 // Nav
@@ -250,7 +259,7 @@
 		display: block;
 		width: 16px;
 		height: 1px;
-		background: rgba(201,168,76,0.3);
+		background: rgba(var(--rgb-accent), 0.3);
 		@include transition();
 	}
 
@@ -290,9 +299,9 @@
 	justify-content: center;
 	width: 28px;
 	height: 28px;
-	border: 1px solid rgba(201,168,76,0.2);
+	border: 1px solid rgba(var(--rgb-accent), 0.2);
 	border-radius: 6px;
-	background: rgba(201,168,76,0.04);
+	background: rgba(var(--rgb-accent), 0.04);
 	flex-shrink: 0;
 }
 
@@ -303,8 +312,8 @@
 	gap: 8px;
 	margin-top: 8px;
 	padding: 12px 20px;
-	background: rgba(201,168,76,0.08);
-	border: 1px solid rgba(201,168,76,0.3);
+	background: rgba(var(--rgb-accent), 0.08);
+	border: 1px solid rgba(var(--rgb-accent), 0.3);
 	border-radius: 8px;
 	font-size: 0.875rem;
 	font-weight: 600;
@@ -323,9 +332,9 @@
 // Bottom bar
 .site-footer__bottom
 {
-	border-top: 1px solid rgba(255,255,255,0.04);
+	border-top: 1px solid var(--color-footer-bottom-border);
 	padding: 20px 0;
-	background: rgba(0,0,0,0.15);
+	background: var(--color-footer-bottom-bg);
 }
 
 .site-footer__bottom-inner
@@ -340,18 +349,18 @@
 .site-footer__copy
 {
 	font-size: 0.8125rem;
-	color: rgba(160,168,184,0.5);
+	color: var(--color-footer-copy);
 }
 
 .site-footer__legal
 {
 	font-size: 0.75rem;
-	color: rgba(160,168,184,0.35);
+	color: var(--color-footer-legal);
 }
 
 .site-footer__legal-link
 {
-	color: rgba(160,168,184,0.5);
+	color: var(--color-footer-copy);
 	text-decoration: none;
 	@include transition();
 

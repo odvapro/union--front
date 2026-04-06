@@ -1,3 +1,4 @@
+@import url('@/assets/styles/base/_theme.scss');
 @import url('@/assets/styles/base/_fonts.scss');
 @import url('@/assets/styles/base/_global.scss');
 
@@ -51,7 +52,7 @@ a { text-decoration: none; }
 	.v-toast__text
 	{
 		padding: 0!important;
-		color: $white!important;
+		color: var(--color-toast-text)!important;
 	}
 
 	&--error { background-color: $red!important; }

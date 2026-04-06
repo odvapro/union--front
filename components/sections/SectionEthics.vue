@@ -63,7 +63,7 @@
 <style lang="scss">
 .ethics
 {
-	background: linear-gradient(180deg, $dark 0%, rgba(15,32,53,0.6) 100%);
+	background: linear-gradient(180deg, $dark 0%, $darkCard 100%);
 }
 
 .ethics__header
@@ -103,7 +103,7 @@
 
 	&:hover
 	{
-		border-color: rgba(201,168,76,0.5);
+		border-color: rgba(var(--rgb-accent), 0.5);
 		transform: translateY(-2px);
 	}
 }

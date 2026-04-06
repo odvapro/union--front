@@ -10,11 +10,6 @@
 			scrollTrigger: { trigger: '.security__inner', start: 'top 85%', once: true },
 		});
 
-		gsap.fromTo('.security__shield', { autoAlpha: 0, y: 40, scale: 0.9 }, {
-			autoAlpha: 1, y: 0, scale: 1, duration: 1.0, ease: 'power3.out',
-			scrollTrigger: { trigger: '.security__inner', start: 'top 85%', once: true },
-		});
-
 		gsap.fromTo('.security__block', { autoAlpha: 0, y: 30 }, {
 			autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.2, ease: 'power3.out',
 			scrollTrigger: { trigger: '.security__blocks', start: 'top 88%', once: true },
@@ -35,7 +30,7 @@
 					<div class="security__blocks">
 						<div class="security__block">
 							<div class="security__block-icon">
-								<IconsIconShieldCheck style="color: #c9a84c" />
+								<IconsIconShieldCheck class="g-icon-accent" />
 							</div>
 							<div>
 								<h3 class="security__block-title">{{ t('security.b1Title') }}</h3>
@@ -47,7 +42,7 @@
 
 						<div class="security__block">
 							<div class="security__block-icon">
-								<IconsIconLock style="color: #c9a84c" />
+								<IconsIconLock class="g-icon-accent" />
 							</div>
 							<div>
 								<h3 class="security__block-title">{{ t('security.b2Title') }}</h3>
@@ -62,10 +57,6 @@
 						{{ t('security.quote') }}
 					</div>
 				</div>
-
-				<div class="security__shield" aria-hidden="true">
-					<IconsIconShieldLarge />
-				</div>
 			</div>
 		</div>
 	</section>
@@ -74,19 +65,16 @@
 <style lang="scss">
 .security
 {
-	background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.05) 0%, transparent 60%), $dark;
+	background: radial-gradient(ellipse at 80% 50%, rgba(var(--rgb-accent), 0.05) 0%, transparent 60%), $dark;
 }
 
 .security__inner
 {
 	display: flex;
 	align-items: center;
-	gap: 80px;
-
-	@include mq(0, 900) { flex-direction: column; gap: 48px; }
 }
 
-.security__text { flex: 1; }
+.security__text { flex: 1; max-width: 700px; }
 
 .security__label
 {
@@ -124,7 +112,7 @@
 	justify-content: center;
 	border: 1px solid $goldDim;
 	border-radius: 10px;
-	background: rgba(201,168,76,0.04);
+	background: rgba(var(--rgb-accent), 0.04);
 	flex-shrink: 0;
 }
 
@@ -147,7 +135,7 @@
 {
 	padding: 20px 24px;
 	border-left: 3px solid $gold;
-	background: rgba(201,168,76,0.05);
+	background: rgba(var(--rgb-accent), 0.05);
 	border-radius: 0 8px 8px 0;
 	font-size: 1.0625rem;
 	font-weight: 500;
@@ -155,11 +143,4 @@
 	font-style: italic;
 }
 
-.security__shield
-{
-	flex-shrink: 0;
-	opacity: 0.85;
-
-	@include mq(0, 900) { display: none; }
-}
 </style>

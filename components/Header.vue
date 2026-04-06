@@ -7,6 +7,7 @@
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 	const { t, locale } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
+	const { theme, toggleTheme } = useTheme();
 
 	const navLinks = computed(() => [
 		{ label: t('nav.about'), href: '#about', num: '01' },
@@ -130,6 +131,17 @@
 						>{{ t('header.langEn') }}</NuxtLink>
 					</div>
 
+					<div class="hdr__theme" :aria-label="t('header.switchTheme')">
+						<button
+							type="button"
+							class="hdr__theme-btn"
+							@click="toggleTheme"
+						>
+							<IconsIconSun v-if="theme === 'dark'" :size="18" />
+							<IconsIconMoon v-else :size="18" />
+						</button>
+					</div>
+
 					<a
 						class="hdr__cta"
 						href="#application"
@@ -202,12 +214,12 @@
 	left: 0;
 	right: 0;
 	z-index: 400;
-	background: linear-gradient(180deg, rgba(10, 18, 30, 0.97) 0%, rgba(13, 27, 46, 0.94) 100%);
+	background: var(--color-header-bg);
 	backdrop-filter: blur(20px) saturate(1.2);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+	border-bottom: 1px solid var(--color-header-border);
 	box-shadow:
 		0 1px 0 rgba(255, 255, 255, 0.04) inset,
-		0 8px 40px rgba(0, 0, 0, 0.35);
+		0 8px 40px rgba(0, 0, 0, 0.18);
 	@include transition();
 
 	&::after
@@ -221,7 +233,7 @@
 		background: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(201, 168, 76, 0.45) 50%,
+			rgba(var(--rgb-accent), 0.45) 50%,
 			transparent 100%
 		);
 		pointer-events: none;
@@ -263,6 +275,11 @@
 	line-height: 0;
 	flex-shrink: 0;
 	@include transition();
+
+	svg path
+	{
+		fill: $textPrimary;
+	}
 }
 
 // Desktop nav (center column)
@@ -285,10 +302,10 @@
 	justify-content: center;
 	gap: 4px 8px;
 	padding: 6px 10px;
-	background: rgba(255, 255, 255, 0.035);
-	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: var(--color-nav-pill-bg);
+	border: 1px solid var(--color-nav-pill-border);
 	border-radius: 999px;
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
 }
 
 .hdr__nav-link
@@ -298,7 +315,7 @@
 	border-radius: 999px;
 	font-size: 0.8125rem;
 	font-weight: 600;
-	color: rgba(200, 206, 218, 0.92);
+	color: var(--color-header-nav-link);
 	text-decoration: none;
 	letter-spacing: 0.04em;
 	@include transition();
@@ -306,12 +323,12 @@
 	&:hover
 	{
 		color: $textPrimary;
-		background: rgba(201, 168, 76, 0.1);
+		background: rgba(var(--rgb-accent), 0.1);
 	}
 
 	&:active
 	{
-		background: rgba(201, 168, 76, 0.16);
+		background: rgba(var(--rgb-accent), 0.16);
 	}
 }
 
@@ -337,10 +354,39 @@
 	display: flex;
 	align-items: stretch;
 	padding: 3px;
-	background: rgba(0, 0, 0, 0.28);
-	border: 1px solid rgba(201, 168, 76, 0.18);
+	background: var(--color-lang-well-bg);
+	border: 1px solid rgba(var(--rgb-accent), 0.18);
 	border-radius: 10px;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.hdr__theme
+{
+	display: flex;
+	align-items: center;
+}
+
+.hdr__theme-btn
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 1px solid rgba(var(--rgb-accent), 0.22);
+	border-radius: 10px;
+	background: var(--color-burger-hover-bg);
+	color: var(--color-text);
+	cursor: pointer;
+	@include transition();
+
+	&:hover
+	{
+		background: rgba(var(--rgb-accent), 0.12);
+		border-color: rgba(var(--rgb-accent), 0.38);
+		color: var(--color-accent);
+	}
 }
 
 .hdr__lang-link
@@ -354,7 +400,7 @@
 	font-size: 0.75rem;
 	font-weight: 700;
 	letter-spacing: 0.06em;
-	color: rgba(160, 168, 184, 0.95);
+	color: var(--color-text-muted);
 	text-decoration: none;
 	@include transition();
 
@@ -365,9 +411,9 @@
 
 	&--active
 	{
-		color: $dark;
+		color: var(--color-text-on-accent);
 		background: linear-gradient(165deg, $goldLight 0%, $gold 100%);
-		box-shadow: 0 2px 12px rgba(201, 168, 76, 0.35);
+		box-shadow: 0 2px 12px rgba(var(--rgb-accent), 0.35);
 	}
 }
 
@@ -380,7 +426,7 @@
 	border-radius: 10px;
 	font-size: 0.8125rem;
 	font-weight: 700;
-	color: $dark;
+	color: var(--color-text-on-accent);
 	text-decoration: none;
 	letter-spacing: 0.06em;
 	flex-shrink: 0;
@@ -388,7 +434,7 @@
 	border: 1px solid rgba(255, 255, 255, 0.12);
 	box-shadow:
 		0 2px 0 rgba(0, 0, 0, 0.15),
-		0 8px 24px rgba(201, 168, 76, 0.22);
+		0 8px 24px rgba(var(--rgb-accent), 0.22);
 	@include transition();
 
 	&:hover
@@ -396,7 +442,7 @@
 		filter: brightness(1.06);
 		box-shadow:
 			0 2px 0 rgba(0, 0, 0, 0.12),
-			0 10px 28px rgba(201, 168, 76, 0.35);
+			0 10px 28px rgba(var(--rgb-accent), 0.35);
 		transform: translateY(-1px);
 	}
 
@@ -418,8 +464,8 @@
 	gap: 6px;
 	width: 44px;
 	height: 44px;
-	background: rgba(201, 168, 76, 0.08);
-	border: 1px solid rgba(201, 168, 76, 0.22);
+	background: var(--color-burger-hover-bg);
+	border: 1px solid rgba(var(--rgb-accent), 0.22);
 	border-radius: 10px;
 	cursor: pointer;
 	padding: 0 11px;
@@ -430,8 +476,8 @@
 
 	&:hover
 	{
-		background: rgba(201, 168, 76, 0.14);
-		border-color: rgba(201, 168, 76, 0.45);
+		background: rgba(var(--rgb-accent), 0.14);
+		border-color: rgba(var(--rgb-accent), 0.45);
 	}
 }
 
@@ -469,7 +515,7 @@
 {
 	position: absolute;
 	inset: 0;
-	background: rgba(13, 27, 46, 0.98);
+	background: var(--color-menu-backdrop);
 	backdrop-filter: blur(16px);
 	border-top: 1px solid $darkBorder;
 }
@@ -564,7 +610,7 @@
 	display: inline-flex;
 	align-items: center;
 	padding: 10px 22px;
-	border: 1px solid rgba(201,168,76,0.5);
+	border: 1px solid rgba(var(--rgb-accent), 0.5);
 	border-radius: 6px;
 	font-size: 0.875rem;
 	font-weight: 600;
@@ -576,9 +622,9 @@
 	&:hover
 	{
 		background: $gold;
-		color: $dark;
+		color: var(--color-text-on-accent);
 		border-color: $gold;
-		box-shadow: 0 0 20px rgba(201,168,76,0.25);
+		box-shadow: 0 0 20px rgba(var(--rgb-accent), 0.25);
 	}
 }
 

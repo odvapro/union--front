@@ -105,11 +105,11 @@
 	cursor: pointer;
 	@include transition();
 
-	&:hover .levels__step-bar { border-color: rgba(201,168,76,0.6); }
+	&:hover .levels__step-bar { border-color: rgba(var(--rgb-accent), 0.6); }
 
 	&--active .levels__step-bar
 	{
-		background: rgba(201,168,76,0.12);
+		background: rgba(var(--rgb-accent), 0.12);
 		border-color: $gold;
 	}
 }

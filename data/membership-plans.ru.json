@@ -5,7 +5,6 @@
 		"audience": "Начинающие предприниматели и те, кто в найме",
 		"price": "15 000 ₽ / мес",
 		"priceVisit": "5 000 ₽ / визит",
-		"color": "#a07840",
 		"blocks": [
 			{
 				"title": "Образование",
@@ -48,7 +47,6 @@
 		"price": "45 000 ₽ / мес",
 		"priceVisit": "10 000 ₽ / визит",
 		"note": "+ полный доступ к опциям пакета START",
-		"color": "#c9a84c",
 		"featured": true,
 		"blocks": [
 			{
@@ -95,7 +93,6 @@
 		"price": "По рекомендации",
 		"note": "+ полный доступ к START и BUSINESS",
 		"lock": true,
-		"color": "#e8c97a",
 		"blocks": [
 			{
 				"title": "Образование",

@@ -5,7 +5,6 @@
 		"audience": "Early-stage entrepreneurs and employed professionals",
 		"price": "15,000 ₽ / month",
 		"priceVisit": "5,000 ₽ / visit",
-		"color": "#a07840",
 		"blocks": [
 			{
 				"title": "Education",
@@ -48,7 +47,6 @@
 		"price": "45,000 ₽ / month",
 		"priceVisit": "10,000 ₽ / visit",
 		"note": "+ full access to START package options",
-		"color": "#c9a84c",
 		"featured": true,
 		"blocks": [
 			{
@@ -95,7 +93,6 @@
 		"price": "By referral",
 		"note": "+ full access to START and BUSINESS",
 		"lock": true,
-		"color": "#e8c97a",
 		"blocks": [
 			{
 				"title": "Education",
