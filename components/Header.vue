@@ -2,7 +2,6 @@
 	import { gsap } from '~/composables/useGsap';
 
 	const menuOpen = ref(false);
-	const scrolled = ref(false);
 	const { siteUrl, siteHost, contactPhone, contactPhoneHref } = usePublicSite();
 
 	const navLinks = [
@@ -74,18 +73,10 @@
 	{
 		menuOpen.value ? closeMenu() : openMenu();
 	}
-
-	// Изменение фона хедера при скролле
-	onMounted(() =>
-	{
-		const handler = () => { scrolled.value = window.scrollY > 40; };
-		window.addEventListener('scroll', handler, { passive: true });
-		onUnmounted(() => window.removeEventListener('scroll', handler));
-	});
 </script>
 
 <template>
-	<header class="hdr" :class="{ 'hdr--scrolled': scrolled, 'hdr--menu-open': menuOpen }">
+	<header class="hdr">
 		<div class="container hdr__inner">
 
 			<!-- Logo -->
@@ -184,16 +175,11 @@
 	left: 0;
 	right: 0;
 	z-index: 400;
+	background: rgba(13, 27, 46, 0.98);
+	backdrop-filter: blur(16px);
+	border-bottom: 1px solid $darkBorder;
+	box-shadow: 0 4px 32px rgba(0,0,0,0.3);
 	@include transition();
-
-	&--scrolled,
-	&--menu-open
-	{
-		background: rgba(13, 27, 46, 0.98);
-		backdrop-filter: blur(16px);
-		border-bottom: 1px solid $darkBorder;
-		box-shadow: 0 4px 32px rgba(0,0,0,0.3);
-	}
 }
 
 .hdr__inner

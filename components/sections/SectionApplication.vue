@@ -26,6 +26,7 @@
 
 	const submitted = ref(false);
 	const loading = ref(false);
+	const submitError = ref('');
 
 	const revenueOptions = [
 		{ value: 'employee', label: 'Я в найме' },
@@ -38,11 +39,36 @@
 	{
 		if (!form.name || !form.phone || !form.revenue || !form.agree) return;
 
+		submitError.value = '';
 		loading.value = true;
-		// имитация отправки
-		await new Promise(r => setTimeout(r, 800));
-		loading.value = false;
-		submitted.value = true;
+		try
+		{
+			await $fetch('/api/application', {
+				method: 'POST',
+				body: {
+					name: form.name,
+					phone: form.phone,
+					revenue: form.revenue,
+					message: form.message,
+					agree: form.agree,
+				},
+			});
+			submitted.value = true;
+		}
+		catch (e)
+		{
+			let msg = '';
+			if (e && typeof e === 'object' && 'data' in e && e.data && typeof e.data === 'object')
+			{
+				const d = e.data;
+				msg = String(d.message || d.statusMessage || '');
+			}
+			submitError.value = msg || 'Не удалось отправить заявку. Попробуйте позже или позвоните нам.';
+		}
+		finally
+		{
+			loading.value = false;
+		}
 	}
 </script>
 
@@ -126,6 +152,8 @@
 							</span>
 						</label>
 
+						<p v-if="submitError" class="application__error">{{ submitError }}</p>
+
 						<button
 							class="application__submit"
 							:disabled="!form.name || !form.phone || !form.revenue || !form.agree || loading"
@@ -188,6 +216,7 @@
 
 .application__contact
 {
+	width: max-content;
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -298,6 +327,14 @@
 	font-size: 0.8125rem;
 	color: $textSecondary;
 	line-height: 1.5;
+}
+
+.application__error
+{
+	margin: 0;
+	font-size: 0.875rem;
+	line-height: 1.45;
+	color: $red;
 }
 
 .application__submit

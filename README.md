@@ -12,15 +12,22 @@
 
 # Минимальные требования перед запуском проекта
 Ознакомиться с [используемым стеком](#Используемый-стек), хотя бы частично.
-Установить минимальную версию `Node.js`: v21.7.3 (LTS)
-Установить минимальную версию `npm`: v10.5.0 (Latest)
+Установить **Node.js** 20.x или новее (рекомендуется актуальный LTS; для Nuxt 4 официально ожидается Node ^20.19 или ^22.12+).
+Установить **npm** 10+ (или совместимый pnpm/yarn, если команда договорится об этом в проекте).
+
+Скопировать переменные окружения: `cp .env.example .env` и при необходимости задать `NUXT_PUBLIC_SITE_URL`, контакты и прочие `NUXT_PUBLIC_*` из `.env.example`.
 
 # Используемый стек
-- Фреймворк - [nuxt 3 @^3.12.4](https://nuxt.com/docs/getting-started/introduction)
-- Глобальное хранилище - [@pinia/nuxt @^0.5.1](https://nuxt.com/modules/pinia)
-- Ui библиотека - [shadcn-nuxt @^0.10.4](https://www.shadcn-vue.com/docs/installation/nuxt.html)
-- Препроцессор - [SASS @^1.77.8](https://sass-lang.com/)
-- Валидация - ["@vuelidate/core": "^2.0.3", "@vuelidate/validators": "^2.0.4",](https://vuelidate-next.netlify.app/),
+- Фреймворк — [Nuxt 4](https://nuxt.com/docs/getting-started/introduction) (Vue 3, file-based routing, Nitro)
+- Состояние — [Pinia](https://pinia.vuejs.org/) + [@pinia/nuxt](https://nuxt.com/modules/pinia)
+- Утилиты для Vue — [@vueuse/nuxt](https://vueuse.org/) (в т.ч. композиции для DOM)
+- Стили — **SCSS** (глобальные переменные и миксины в `assets/styles`, вёрстка компонентов по **БЭМ**), без Tailwind
+- Анимации — [GSAP](https://gsap.com/) (+ ScrollTrigger через проектный `useGsap`)
+- Маска ввода — [maska](https://beholdr.github.io/maska/v3/)
+- Уведомления — [vue-toast-notification](https://www.npmjs.com/package/vue-toast-notification)
+- Тесты — [Vitest](https://vitest.dev/)
+
+Отдельно: SEO-мета и JSON-LD на главной, динамические маршруты Nitro для `/sitemap.xml` и `/site.webmanifest`, публичные настройки через `NUXT_PUBLIC_*` (см. `.env.example`).
 
 # Code style
 По всей компании придерживаемся стиля [Allman](https://en.wikipedia.org/wiki/Indentation_style#Allman_style) для размещения фигурных скобок.
@@ -238,13 +245,13 @@ const userConfig =
 | - plugins
 | - public
 | - server
+|   |- routes/          # Nitro: например sitemap.xml, site.webmanifest
 | - utils
 | - assets/
-|   |- fonts/.
-|   |- styles/;
-|        |- base/;
-|        |- index.scss;
-|        |- tailwind.css;
+|   |- fonts/
+|   |- styles/
+|        |- base/       # _variables.scss, _mixins.scss, _global.scss, _fonts.scss
+|        |- index.scss
 ```
 
 Дальше разберем каждую по отдельности
@@ -287,10 +294,10 @@ styles/
 - **Подход**: работаем через стандартные методы Vue и работу через Virtual DOM
 
 ### 📁 /ui
-Тут будут лежать все ваши компоненты компоненты
+Переиспользуемые UI-компоненты общего назначения (кнопка, диалог подтверждения и т.д.), оформленные в стиле проекта (SCSS + БЭМ).
 
-### 📁 /shadcn-ui
-Тут будут лежать компоненты от shadcn-ui
+### 📁 /components/sections
+Секции лендинга и крупные блоки страниц (например `SectionHero.vue`), подключаются в `pages` как автокомпоненты Nuxt.
 
 ## 📁 /composables
 В данной директории будут находиться все функциональные компоненты. Каждый файл обязательно должен называться с приставки `use-`.
@@ -302,7 +309,10 @@ styles/
 В данной директории будут находиться все ваши сторонние (или кастомные) плагины.
 
 ## 📁 /public
-В данной директории будут находиться фав-иконки и различные изображения.
+Статика, отдаваемая с корня сайта: фавиконки, `robots.txt` и др. Часть путей (манифест) может собираться динамически через `server/routes`.
+
+## 📁 /server
+Серверная часть Nitro: API-хендлеры и файловые маршруты (например, генерация `sitemap.xml` и `site.webmanifest` из `runtimeConfig`).
 
 ## 📁 /utils
 В данной директории будут находиться все служебных функции, например:

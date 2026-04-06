@@ -1,6 +1,8 @@
 <script setup>
 	import { gsap } from '~/composables/useGsap';
 
+	const { contactPhoneHref } = usePublicSite();
+
 	onMounted(() =>
 	{
 		gsap.fromTo('.membership__header', { autoAlpha: 0, y: 40 }, {
@@ -230,8 +232,7 @@
 				</div>
 				<a
 					class="membership__founder-cta"
-					href="#application"
-					@click.prevent="document.querySelector('#application').scrollIntoView({ behavior: 'smooth' })"
+					:href="contactPhoneHref"
 				>
 					Обсудить условия
 				</a>

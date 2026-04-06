@@ -119,11 +119,6 @@ description: Vue component development guidelines
 </style>
 ```
 
-## Form Validation
-Use Vuelidate for form validation:
-- `@vuelidate/core` @^2.0.3
-- `@vuelidate/validators` @^2.0.4
-
 ## State Management
 Use Pinia for global state management:
 - `@pinia/nuxt` @^0.5.1
