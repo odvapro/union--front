@@ -255,6 +255,12 @@
 	min-height: 80px;
 	padding-top: 2px;
 	padding-bottom: 2px;
+
+	/* Скрытый nav убирается из сетки — иначе остаётся пустая третья колонка и зазор справа */
+	@include mq(0, 960)
+	{
+		grid-template-columns: auto minmax(0, 1fr);
+	}
 }
 
 // Logo

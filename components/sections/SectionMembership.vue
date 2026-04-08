@@ -43,6 +43,20 @@
 	});
 
 	const activePlan = ref(0);
+
+	function onTabSelect(i, event)
+	{
+		activePlan.value = i;
+
+		nextTick(() =>
+		{
+			event.currentTarget?.scrollIntoView?.({
+				behavior: 'smooth',
+				inline: 'center',
+				block: 'nearest',
+			});
+		});
+	}
 </script>
 
 <template>
@@ -63,7 +77,7 @@
 					:key="plan.name"
 					class="membership__tab"
 					:class="{ 'membership__tab--active': activePlan === i }"
-					@click="activePlan = i"
+					@click="onTabSelect(i, $event)"
 				>
 					<span class="membership__tab-name">{{ plan.name }}</span>
 					<span class="membership__tab-tag">{{ plan.tag }}</span>
@@ -134,6 +148,43 @@
 	display: flex;
 	gap: 8px;
 	flex-wrap: wrap;
+
+	@include mq(0, 640)
+	{
+		flex-wrap: nowrap;
+		gap: 10px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior-x: contain;
+		scrollbar-width: thin;
+		scrollbar-color: rgba(var(--rgb-accent), 0.35) transparent;
+		margin-left: -24px;
+		margin-right: -24px;
+		padding-bottom: 10px;
+
+		/* padding слева/справа нельзя: у overflow-x он в прокручиваемой зоне и визуально «съедается».
+		   14px + gap 10px = 24px как у .container */
+		&::before,
+		&::after
+		{
+			content: '';
+			flex: 0 0 14px;
+			width: 14px;
+			min-width: 14px;
+		}
+
+		&::-webkit-scrollbar
+		{
+			height: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb
+		{
+			background: rgba(var(--rgb-accent), 0.35);
+			border-radius: 2px;
+		}
+	}
 }
 
 .membership__tab
@@ -149,11 +200,26 @@
 	cursor: pointer;
 	@include transition();
 
+	@include mq(0, 640)
+	{
+		flex: 0 0 auto;
+		min-width: 200px;
+		max-width: min(320px, calc(100vw - 48px));
+		padding: 12px 18px;
+		border-bottom: 1px solid $darkBorder;
+		border-radius: 8px;
+	}
+
 	&--active
 	{
 		background: rgba(var(--rgb-accent), 0.08);
 		border-color: $gold;
 		border-bottom-color: transparent;
+
+		@include mq(0, 640)
+		{
+			border-bottom-color: $gold;
+		}
 	}
 
 	&:hover:not(&--active) { border-color: rgba(var(--rgb-accent), 0.3); }
@@ -179,6 +245,13 @@
 	background: $darkCard;
 	border-radius: 0 8px 8px 8px;
 	margin-bottom: 24px;
+
+	@include mq(0, 640)
+	{
+		border-radius: 8px;
+		margin-top: 4px;
+		padding: 24px 20px;
+	}
 }
 
 .membership__card-head
