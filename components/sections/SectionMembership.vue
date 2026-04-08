@@ -4,6 +4,7 @@
 	import plansEn from '~/data/membership-plans.en.json';
 
 	const { contactPhoneHref } = usePublicSite();
+	const { showParticipationPricing } = useSiteFlags();
 	const { t, locale } = useI18n();
 
 	const plans = computed(() => (locale.value === 'en' ? plansEn : plansRu));
@@ -92,14 +93,14 @@
 							<span v-if="plans[activePlan].lock"> 🔒</span>
 						</div>
 						<div class="membership__card-audience">{{ plans[activePlan].audience }}</div>
+						<p v-if="plans[activePlan].note" class="membership__card-note">
+							{{ plans[activePlan].note }}
+						</p>
 					</div>
-					<div class="membership__card-pricing">
+					<div v-if="showParticipationPricing" class="membership__card-pricing">
 						<div class="membership__price-main">{{ plans[activePlan].price }}</div>
 						<div v-if="plans[activePlan].priceVisit" class="membership__price-visit">
 							{{ plans[activePlan].priceVisit }}
-						</div>
-						<div v-if="plans[activePlan].note" class="membership__price-note">
-							{{ plans[activePlan].note }}
 						</div>
 					</div>
 				</div>
@@ -282,6 +283,15 @@
 	color: $textSecondary;
 }
 
+.membership__card-note
+{
+	margin-top: 10px;
+	font-size: 0.8125rem;
+	color: $gold;
+	font-style: italic;
+	line-height: 1.45;
+}
+
 .membership__card-pricing { text-align: right; @include mq(0, 640) { text-align: left; } }
 
 .membership__price-main
@@ -296,14 +306,6 @@
 	font-size: 0.875rem;
 	color: $textSecondary;
 	margin-top: 4px;
-}
-
-.membership__price-note
-{
-	margin-top: 8px;
-	font-size: 0.8125rem;
-	color: $gold;
-	font-style: italic;
 }
 
 .membership__blocks

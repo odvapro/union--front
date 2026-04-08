@@ -4,6 +4,7 @@
 	import levelsEn from '~/data/levels.en.json';
 
 	const { t, locale } = useI18n();
+	const { showParticipationPricing } = useSiteFlags();
 
 	const levels = computed(() => (locale.value === 'en' ? levelsEn : levelsRu));
 
@@ -64,7 +65,10 @@
 					<p class="levels__detail-desc">{{ levels[activeLevel].desc }}</p>
 					<p class="levels__detail-text">{{ levels[activeLevel].detail }}</p>
 				</div>
-				<div v-if="levels[activeLevel].price" class="levels__detail-price">
+				<div
+					v-if="showParticipationPricing && levels[activeLevel].price"
+					class="levels__detail-price"
+				>
 					<span class="levels__price-label">{{ t('levels.priceLabel') }}</span>
 					<span class="levels__price-value">{{ levels[activeLevel].price }}</span>
 				</div>

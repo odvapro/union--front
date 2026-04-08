@@ -2,7 +2,7 @@
 	{
 		"name": "START",
 		"tag": "Foundation",
-		"audience": "Early-stage entrepreneurs and employed professionals",
+		"audience": "Early-stage entrepreneurs and people in employment",
 		"price": "15,000 ₽ / month",
 		"priceVisit": "5,000 ₽ / visit",
 		"blocks": [
@@ -66,7 +66,7 @@
 					"1 personal 2-hour consulting session per month",
 					"2 group sessions per year led by PREMIER residents",
 					"Personal Board of Directors twice a year",
-					"“Lifecycle management” course worth 200,000 ₽"
+					"Course “Company life cycle management”"
 				]
 			},
 			{
@@ -91,33 +91,38 @@
 		"tag": "Influence",
 		"audience": "Entrepreneurs with revenue from 500M ₽ per year",
 		"price": "By referral",
-		"note": "+ full access to START and BUSINESS",
+		"note": "+ full access to START and BUSINESS package options",
 		"lock": true,
 		"blocks": [
 			{
 				"title": "Education",
 				"items": [
-					"Unlimited access to offline seminars",
-					"4 seminar seats for employees once per year",
+					"Preferential Netology access for the resident and employees",
+					"Monthly accelerator access for 2 employees (for people in employment)",
+					"Unlimited offline seminars for the resident (50+ lessons from experts)",
+					"4 offline seminar seats for the resident’s employees once per year (50+ lessons)",
 					"20% off UNION educational products"
 				]
 			},
 			{
 				"title": "Consulting",
 				"items": [
-					"Diagnostic + IDP with a UNION expert",
-					"2 personal consulting sessions per month + tracking",
-					"2-day strategic session once per year",
-					"Personal Board of Directors twice a year"
+					"Annual personal diagnostic — personality audit: test debrief and IDP with a UNION expert",
+					"2 personal 2-hour sessions per month (case work + tracking) for the resident or employees",
+					"2-day strategic session with a UNION expert once per year",
+					"Personal Board of Directors twice a year (forum of 5–7 peers at a similar level and values)",
+					"Course “Company life cycle management”"
 				]
 			},
 			{
 				"title": "Networking",
 				"items": [
-					"Private dinner with a speaker every month",
+					"Monthly forum with speakers — private dinner with a speaker",
+					"Monthly MasterMind / Codevelopment with PREMIER residents and club experts",
 					"Business visits to major companies in Russia and worldwide",
 					"Union Council membership (agenda influence)",
-					"Host an event at UNION four times a year"
+					"Annual all-UNION residents meetup",
+					"Host your own event at UNION four times a year"
 				]
 			},
 			{

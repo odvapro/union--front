@@ -2,6 +2,7 @@
 	const runtimeConfig = useRuntimeConfig();
 	const { siteUrl, siteName, contactPhoneSchema } = usePublicSite();
 	const { t, locale } = useI18n();
+	const { showParticipationPricing } = useSiteFlags();
 	const baseSiteUrl = siteUrl.replace(/\/+$/, '');
 
 	const pageUrl = computed(() => (locale.value === 'en' ? `${baseSiteUrl}/en` : `${baseSiteUrl}/`));
@@ -112,15 +113,13 @@
 								'@type': 'Offer',
 								name: 'START',
 								description: t('schema.offerStart'),
-								price: '15000',
-								priceCurrency: 'RUB',
+								...(showParticipationPricing ? { price: '15000', priceCurrency: 'RUB' } : {}),
 							},
 							{
 								'@type': 'Offer',
 								name: 'BUSINESS',
 								description: t('schema.offerBusiness'),
-								price: '45000',
-								priceCurrency: 'RUB',
+								...(showParticipationPricing ? { price: '45000', priceCurrency: 'RUB' } : {}),
 							},
 							{
 								'@type': 'Offer',
