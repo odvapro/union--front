@@ -3,50 +3,52 @@
 		"name": "Strategy and systems",
 		"courses": [
 			{
-				"num": "01",
 				"title": "Strategic planning: from vision to results",
 				"items": [
 					"Mission and key business priorities",
 					"Strategic planning",
 					"Goal map and team accountability",
-					"Management tools to turn strategy into tactics"
+					"Management tools to turn strategy into tactics",
+					"Team focus on achieving goals through collaboration"
 				]
 			},
 			{
-				"num": "02",
-				"title": "Organizational life cycle",
+				"title": "Organization life cycle",
 				"items": [
-					"Company life cycle stages",
+					"Company life cycle stages and their specifics",
 					"Management cycle map",
-					"Cross-functional conflicts and resolution techniques",
-					"Organizational transformation program"
+					"Cross-functional conflicts and how to resolve them",
+					"Tools and solutions relevant to each stage",
+					"Organizational transformation program — from an owner-dependent model to an autonomous management system"
 				]
 			},
 			{
-				"num": "03",
 				"title": "Management cycle",
 				"items": [
-					"Management system without a “boss” role",
-					"Task-setting and delivery skills",
-					"Algorithms for personal and team effectiveness"
+					"A management system that works without a traditional “boss”",
+					"Skills for setting tasks and getting results",
+					"Developing leadership qualities and team management competencies",
+					"Algorithms for personal and team effectiveness",
+					"Hiring and retention practices, offboarding methods",
+					"Personal competency development plan for participants"
 				]
 			},
 			{
-				"num": "08",
-				"title": "Sales reimagined: from contact to value",
+				"title": "Sales reimagined: from contact to value for the client",
 				"items": [
-					"Selling solutions and building long-term relationships",
-					"Customer type diagnostics",
-					"Uncovering hidden needs and handling objections"
+					"Solving problems and building long-term relationships",
+					"Customer type diagnostics and adapting communication",
+					"Uncovering hidden needs and handling objections",
+					"Techniques to present benefits and close deals without pressure"
 				]
 			},
 			{
-				"num": "09",
 				"title": "Business as a system: stop firefighting",
 				"items": [
-					"Analyzing and improving business processes",
-					"From working in the business to managing it",
-					"Business process blueprint design"
+					"Analyzing and improving business processes and management systems",
+					"From working in the business to managing the business",
+					"Tools to improve management quality and process analysis",
+					"Drafting business process maps for key areas"
 				]
 			}
 		]
@@ -55,48 +57,70 @@
 		"name": "Team and culture",
 		"courses": [
 			{
-				"num": "04",
 				"title": "Team engagement and motivation",
 				"items": [
-					"Measuring and raising engagement without pressure",
-					"Diagnosing and fixing team dynamics bottlenecks",
-					"Building a culture of openness and initiative"
+					"Measuring and increasing team engagement without pressure",
+					"Analyzing and removing bottlenecks in team dynamics",
+					"Motivation, communication, and feedback methods",
+					"Building a culture of openness, trust, and initiative",
+					"Practical algorithms for engagement and accountability"
 				]
 			},
 			{
-				"num": "05",
-				"title": "Hiring productive employees",
+				"title": "Corporate culture",
+				"items": [
+					"Measuring and increasing team engagement without pressure",
+					"Analyzing and removing bottlenecks in team dynamics",
+					"Motivation, communication, and feedback methods",
+					"Building a culture of openness, trust, and initiative",
+					"Practical algorithms for engagement and accountability"
+				]
+			},
+			{
+				"title": "How to hire productive employees and manage them",
 				"items": [
 					"Identifying performers and effective interviewing",
-					"Tools to retain key people",
-					"Unified hiring rules and team profile"
+					"Tools to retain key and accountable employees",
+					"Higher productivity through quality hiring",
+					"Unified hiring rules and building a team profile"
 				]
 			},
 			{
-				"num": "10",
+				"title": "Motivation that works: management through drivers",
+				"items": [
+					"Identifying employees’ internal motivational drivers",
+					"Creating conditions for personal and professional growth",
+					"Personalizing management practices and boosting productivity",
+					"Using motivation as a management resource"
+				]
+			},
+			{
 				"title": "Management 3.0: leadership without stress",
 				"items": [
 					"Conscious result management without pressure",
-					"Delegation and control tools",
+					"Delegation tools and quality control of tasks",
+					"Balance between control and team autonomy",
+					"Methods to build autonomy and run effective meetings",
 					"Non-financial motivation"
 				]
 			},
 			{
-				"num": "11",
-				"title": "Stages of team development",
+				"title": "Stages of team development: from group to high-performing team",
 				"items": [
-					"Diagnosing the team development stage",
-					"Managing team dynamics",
-					"Motivation aligned with goals and values"
+					"Diagnosing the team stage and a transition plan",
+					"Managing team dynamics and conflicts",
+					"Shared values, rules, and trust",
+					"Effective motivation aligned with team goals and values"
 				]
 			},
 			{
-				"num": "12",
 				"title": "Human ecology in business",
 				"items": [
 					"Corporate culture as a competitive advantage",
-					"Physiology and performance",
-					"Talent retention and reducing turnover"
+					"Physiology and employee performance",
+					"Balance between work and personal effectiveness",
+					"Talent retention and reducing turnover without large budgets",
+					"Managing dynamics and team engagement"
 				]
 			}
 		]
@@ -105,48 +129,48 @@
 		"name": "Personal effectiveness and tools",
 		"courses": [
 			{
-				"num": "13",
 				"title": "Resourceful state",
 				"items": [
 					"Managing physical, emotional, and mental energy",
-					"Burnout diagnostics and recovery methods",
+					"Preventing and addressing burnout among leaders and teams",
+					"Burnout diagnostics and ways to restore motivation",
 					"Quick recovery techniques without stepping away from work"
 				]
 			},
 			{
-				"num": "14",
-				"title": "Leader emotional intelligence",
+				"title": "Leader emotional intelligence and team results",
 				"items": [
 					"Managing emotions to boost team productivity",
 					"Building trust and accountability",
-					"Group dynamics for motivation"
+					"Recognizing manipulation and hidden conflicts",
+					"Group dynamics for motivation and loyalty"
 				]
 			},
 			{
-				"num": "15",
 				"title": "Time management for leaders",
 				"items": [
+					"Using attention effectively instead of “time management”",
 					"Planning systems that raise productivity by up to 30%",
-					"Delegation and focus techniques",
-					"Designing your “ideal day”"
+					"Delegation and focus on strategic tasks",
+					"Designing an “ideal day” for effectiveness and energy balance"
 				]
 			},
 			{
-				"num": "16",
 				"title": "Excel for business: data, analytics, efficiency",
 				"items": [
-					"Report automation and advanced spreadsheets",
-					"Data visualization and routine optimization",
+					"Using Excel and Google Sheets to automate reporting",
+					"Building and analyzing advanced spreadsheets with business logic",
+					"Optimizing routines and visualizing data",
 					"Real cases from participants’ businesses"
 				]
 			},
 			{
-				"num": "17",
 				"title": "Presentation skills: structure and clarity",
 				"items": [
-					"Principles of persuasive decks",
-					"Storytelling and visual design",
-					"Preparing and delivering presentations"
+					"Principles of persuasive, structured presentations",
+					"Storytelling and slide visual design",
+					"Data visualization tools and reducing text",
+					"Algorithms to prepare and deliver effective presentations"
 				]
 			}
 		]

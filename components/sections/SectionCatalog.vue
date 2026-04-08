@@ -60,11 +60,10 @@
 
 			<div class="catalog__courses">
 				<div
-					v-for="course in categories[activeCategory].courses"
-					:key="course.num"
+					v-for="(course, courseIdx) in categories[activeCategory].courses"
+					:key="`${activeCategory}-${courseIdx}-${course.title}`"
 					class="catalog__course gold-border"
 				>
-					<span class="catalog__course-num">{{ course.num }}</span>
 					<div class="catalog__course-body">
 						<h3 class="catalog__course-title">{{ course.title }}</h3>
 						<ul class="catalog__course-list">
@@ -120,24 +119,11 @@
 
 .catalog__course
 {
-	display: flex;
-	gap: 20px;
 	padding: 28px;
 	background: $darkCard;
 	@include transition();
 
 	&:hover { border-color: rgba(var(--rgb-accent), 0.4); }
-}
-
-.catalog__course-num
-{
-	font-size: 0.75rem;
-	font-weight: 800;
-	letter-spacing: 0.1em;
-	color: $gold;
-	opacity: 0.5;
-	flex-shrink: 0;
-	padding-top: 3px;
 }
 
 .catalog__course-title
