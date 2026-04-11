@@ -176,6 +176,7 @@
 		<SectionsSectionEthics />
 		<SectionsSectionLevels />
 		<SectionsSectionMembership />
+		<SectionsSectionSystemicLeader />
 		<SectionsSectionCatalog />
 		<SectionsSectionProjects />
 		<SectionsSectionFunnel />

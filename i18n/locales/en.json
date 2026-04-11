@@ -96,6 +96,12 @@
 		],
 		"founderCta": "Discuss terms"
 	},
+	"systematicLeader": {
+		"label": "Management Cycle",
+		"titleBefore": "Systemic ",
+		"titleGold": "Leader",
+		"subtitle": "An intensive program of 3 sessions and 6 practice days for managers and business owners"
+	},
 	"catalog": {
 		"titleBefore": "Learning ",
 		"titleGold": "catalog",

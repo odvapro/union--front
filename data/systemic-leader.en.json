@@ -1,0 +1,75 @@
+{
+	"sessions": [
+		{
+			"title": "Session 1. Strategic Vision and Foundations of Conscious Leadership",
+			"days": [
+				{
+					"title": "Day 1. Strategic Planning: From Vision to Results",
+					"items": [
+						"Mission and key business priorities",
+						"Systems thinking",
+						"Strategic planning",
+						"Goal map and team accountability",
+						"Management tools for translating strategy into tactics",
+						"Team focus on achieving goals through collaboration"
+					]
+				},
+				{
+					"title": "Day 2. Effective Leader. Management Without Pressure",
+					"items": [
+						"Corporate culture and values as a management tool",
+						"From manager to leader. The hidden resource of a leader",
+						"Leader's emotional intelligence and team results",
+						"Managing team dynamics and engagement without big budgets and corporate events"
+					]
+				}
+			]
+		},
+		{
+			"title": "Session 2. Personal Effectiveness and Team Dynamics",
+			"days": [
+				{
+					"title": "Day 3. Effective Leader. Personal and Team Effectiveness",
+					"items": [
+						"Principles of a successful leader",
+						"Management cycle map",
+						"Algorithms for managing team and personal effectiveness",
+						"Tools for effective delegation",
+						"Time management for leaders"
+					]
+				},
+				{
+					"title": "Day 4. Effective Team. Stages of Maturity",
+					"items": [
+						"Team development stages: from a group to a high-performing team",
+						"Diagnosing the current stage of team development and transition plan",
+						"Methods for managing team dynamics and conflicts"
+					]
+				}
+			]
+		},
+		{
+			"title": "Session 3. Long-Term Motivation and Resource State",
+			"days": [
+				{
+					"title": "Day 5. Effective Team. Motivation and Engagement",
+					"items": [
+						"Motivation that works: managing through personal drivers",
+						"Conditions for personal and professional growth of employees",
+						"Productive hiring and proper dismissal methods",
+						"Retaining talent and reducing turnover without large budgets"
+					]
+				},
+				{
+					"title": "Day 6. Resource State of the Leader and Team",
+					"items": [
+						"Human physiology and performance",
+						"Managing physical, emotional and mental energy",
+						"Burnout prevention and motivation recovery methods",
+						"Quick recovery techniques without distraction from work"
+					]
+				}
+			]
+		}
+	]
+}
